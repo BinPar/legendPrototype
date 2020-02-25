@@ -21,7 +21,9 @@
   "homepage": "https://github.com/BinPar/legendPrototype#readme",
   "dependencies": {
     "@types/mocha": "^5.2.7",
+    "lorem-ipsum": "^2.0.3",
     "next": "^9.2.2",
+    "random-seed": "^0.3.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },

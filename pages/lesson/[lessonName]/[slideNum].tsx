@@ -20,6 +20,7 @@ export default (): JSX.Element => {
       <h1>{router.query.lessonName}</h1>
       <h2>{router.query.slideNum}</h2>
       <input type="text" />
+      <br />
       <Link href="/lesson/[lessonName]/[slideNum]" as={`/lesson/${router.query.lessonName}/${slideNum + 1}`}>
         <a href="/">Second comment</a>
       </Link>

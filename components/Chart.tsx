@@ -48,8 +48,6 @@ export default ({ seed }: ChartProps): JSX.Element => {
       cy: random.intBetween(size.height * 0.2, size.height * 0.8),
     }));
 
-  console.log(interestPoints);
-
   return (
     <div className="view">
       <svg width={size.width} height={size.height} onClick={update}>

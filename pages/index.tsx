@@ -6,6 +6,7 @@ export default (): JSX.Element => (
     <Head>
       <title>Legend Prototype</title>
       <link rel="stylesheet" type="text/css" href="/styles.css" />
-    </Head>    
+    </Head>
+    
   </React.Fragment>
 );

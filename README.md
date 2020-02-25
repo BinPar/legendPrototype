@@ -1,3 +1,3 @@
-# TypeScript Next Boilerplate
+# Legend Prototype
 
-TypeScript Next Boilerplate
+Prototype for the computation of legend lines positions

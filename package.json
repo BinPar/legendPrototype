@@ -1,7 +1,7 @@
 {
-  "name": "ts-next-boilerplate",
+  "name": "legend-prototype",
   "version": "1.0.0",
-  "description": "TypeScript Next Boilerplate",
+  "description": "Prototype for the computation of legend lines positions",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BinPar/ts-next-boilerplate.git"
+    "url": "git+https://github.com/BinPar/legendPrototype.git"
   },
   "author": "Ignacio <nacho@binpar.com> (https://www.binpar.com/)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BinPar/ts-next-boilerplate/issues"
+    "url": "https://github.com/BinPar/legendPrototype/issues"
   },
-  "homepage": "https://github.com/BinPar/ts-next-boilerplate#readme",
+  "homepage": "https://github.com/BinPar/legendPrototype#readme",
   "dependencies": {
     "@types/mocha": "^5.2.7",
     "next": "^9.0.6",

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "test-dev": "NODE_ENV=development npx jest --watch"
+    "test-dev": "NODE_ENV=development npx jest --watch",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
     "babel-jest": "^24.9.0",
+    "better-docs": "^1.4.7",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.3.0",
@@ -43,6 +45,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "jest": "^24.9.0",
+    "jsdoc": "^3.6.3",
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.3"
   }

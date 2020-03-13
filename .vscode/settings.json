@@ -3,6 +3,8 @@
     "Interop",
     "binpar",
     "esnext",
+    "jsdocs",
+    "recurse",
     "seedrandom"
   ]
 }

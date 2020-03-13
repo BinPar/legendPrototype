@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
+/**
+ * Dummy page that redirects to any random chart page
+ */
 export default (): JSX.Element => {
   const router = useRouter();
   useEffect(() => {

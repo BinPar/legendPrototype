@@ -3,7 +3,11 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Chart from '../../components/Chart';
 
-export default (): JSX.Element => {
+/**
+ * Random chart page that gets the seed from the route and generates
+ * a random points of interest view using the {@link Chart} component.
+ */
+const SeedPage = (): JSX.Element => {
   const router = useRouter();
   if (!router.query.seed) {
     return null;
@@ -18,3 +22,5 @@ export default (): JSX.Element => {
     </React.Fragment>
   );
 };
+
+export default SeedPage;

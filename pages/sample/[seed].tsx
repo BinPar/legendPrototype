@@ -10,6 +10,9 @@ import Chart from '../../components/Chart';
 const SeedPage = (): JSX.Element => {
   const router = useRouter();
   if (!router.query.seed) {
+    // this is never supposed to happen
+    // but anyway we will avoid to draw a chart
+    // with no seed
     return null;
   }
   return (

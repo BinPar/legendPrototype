@@ -94,6 +94,7 @@ const Chart = ({ seed }: ChartProps): JSX.Element => {
     }));
 
   
+  
   return (
     <div className="view">
       <svg width={size.width} height={size.height} onClick={update}>

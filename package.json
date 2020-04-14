@@ -1,6 +1,6 @@
 {
   "name": "legend-prototype",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Prototype for the computation of legend lines positions",
   "scripts": {
     "dev": "next",

@@ -1,9 +1,11 @@
 {
   "cSpell.words": [
     "Interop",
+    "Serializers",
     "binpar",
     "esnext",
     "jsdocs",
+    "prefetch",
     "recurse",
     "seedrandom"
   ]

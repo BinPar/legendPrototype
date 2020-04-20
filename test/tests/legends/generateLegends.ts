@@ -1,4 +1,4 @@
-import generateRandomLegends from '../../utils/generateRandomLegends';
+import generateRandomLegends from '../../../utils/generateRandomLegends';
 
 /**
  * Test to check the random legend generator

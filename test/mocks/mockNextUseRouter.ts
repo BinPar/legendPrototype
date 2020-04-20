@@ -1,10 +1,10 @@
-// Mocks useRouter
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const useRouter = jest.spyOn(require('next/router'), 'useRouter');
 
 /**
- * mockNextUseRouter
- * Mocks the useRouter React hook from Next.js on a test-case by test-case basis
+ * Mocks the useRouter React hook from Next.js 
+ * on a test-case by test-case basis
+ * @param props Properties of the mocked router
  */
 const mockNextUseRouter = (props: {
   route: string;
@@ -13,7 +13,7 @@ const mockNextUseRouter = (props: {
   asPath: string;
   push?: (url: string, as?: string, options?: {}) => void;
 }): void => {
-  useRouter.mockImplementationOnce(() => ({
+  useRouter.mockImplementation(() => ({
     ...props 
   }));
 };

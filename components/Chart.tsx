@@ -26,9 +26,17 @@ const Chart = ({ seed }: ChartProps): JSX.Element => {
    * using a random 7 digits number (or smaller) a the seed
    */
   const update = (): void => {
+    let newSeed = seed;
+
+    // There is almost no option, but we asure that 
+    // we do not repeat the last seed
+    do {
+      newSeed = `${Math.floor(Math.random() * 10000000)}`;
+    } while (newSeed === seed);
+
     router.push(
       '/sample/[seed]',
-      `/sample/${Math.floor(Math.random() * 10000000)}`,
+      `/sample/${newSeed}`,
       { shallow: true },
     );
   };

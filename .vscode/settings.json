@@ -5,6 +5,7 @@
     "binpar",
     "esnext",
     "jsdocs",
+    "lcov",
     "prefetch",
     "recurse",
     "seedrandom",

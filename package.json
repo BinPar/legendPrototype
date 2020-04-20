@@ -9,6 +9,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint \"**/*.{ts,tsx}\" --ignore-pattern node_modules/",
     "test": "jest",
     "test-dev": "NODE_ENV=development npx jest --watch",
     "test-coverage": "jest --coverage",

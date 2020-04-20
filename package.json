@@ -14,6 +14,7 @@
     "test-dev": "NODE_ENV=development npx jest --watch",
     "test-coverage": "jest --coverage",
     "test-coverage-dev": "jest --coverage --watchAll",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "docs": "jsdoc -c jsdoc.json"
   },
   "jest": {
@@ -50,6 +51,7 @@
     "@typescript-eslint/parser": "^2.0.0",
     "babel-jest": "^24.9.0",
     "better-docs": "^1.4.7",
+    "coveralls": "^3.0.11",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^5.3.0",

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import isClient from '../utils/isClient';
 
 /**
  * Size with width and height in pixels
@@ -21,7 +22,7 @@ export interface Size {
  * Note: In case of SSR, it will return 0 as width and height
  */
 const useWindowSize = (): Size => {
-  const isClient = typeof window === 'object';
+  const client = isClient();
 
   /**
    * Calculates the size of the window
@@ -29,8 +30,8 @@ const useWindowSize = (): Size => {
    * or 0 as width and height on SSR
    */
   const getSize = (): Size => ({
-    width: isClient ? window.innerWidth : 0,
-    height: isClient ? window.innerHeight : 0,
+    width: client ? window.innerWidth : 0,
+    height: client ? window.innerHeight : 0,
   });
 
   /**

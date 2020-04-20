@@ -1,4 +1,4 @@
-# EVA Anatomía Legend Prototype
+# EVA Anatomía Legend Prototype [![Build Status](https://travis-ci.org/BinPar/legendPrototype.svg?branch=develop)](https://travis-ci.org/BinPar/legendPrototype) [![Coverage Status](https://coveralls.io/repos/github/BinPar/legendPrototype/badge.svg?branch=develop)](https://coveralls.io/github/BinPar/legendPrototype?branch=develop)
 
 Prototype for the computation of legend lines positions for Eva Anatomía
 

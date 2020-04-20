@@ -4,6 +4,7 @@ import Filter from './Filter';
 import useWindowSize from '../hooks/useWindowSize';
 import { ChartProps } from '../model/chart';
 import generateRandomLegends from '../utils/generateRandomLegends';
+import InterestPoint from './InterestPoint';
 
 /**
  * Generate the chart calculating the legend positions with random
@@ -22,11 +23,20 @@ const Chart = ({ seed }: ChartProps): JSX.Element => {
 
   /**
    * Generates a new random URL when we click anywhere in the SVG
+   * using a random 7 digits number (or smaller) a the seed
    */
   const update = (): void => {
+    let newSeed = seed;
+
+    // There is almost no option, but we asure that 
+    // we do not repeat the last seed
+    do {
+      newSeed = `${Math.floor(Math.random() * 10000000)}`;
+    } while (newSeed === seed);
+
     router.push(
       '/sample/[seed]',
-      `/sample/${Math.floor(Math.random() * 10000000)}`,
+      `/sample/${newSeed}`,
       { shallow: true },
     );
   };
@@ -37,19 +47,7 @@ const Chart = ({ seed }: ChartProps): JSX.Element => {
         <defs>
           <Filter />
         </defs>
-        {interestPoints.map((point) => (
-          <g key={`${point.key}`} filter="url(#sofGlow)">
-            <circle {...point} r={5} fill="#000" filter="url(#sofGlow)" />
-            <line
-              x1={point.cx}
-              y1={point.cy}
-              x2={point.tx}
-              y2={point.ty}
-              stroke="black"
-              strokeWidth="3"
-            />
-          </g>
-        ))}
+        {interestPoints.map(InterestPoint)}
       </svg>
     </div>
   );

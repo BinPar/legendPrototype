@@ -1,14 +1,26 @@
 {
   "name": "legend-prototype",
-  "version": "0.2.0",
+  "version": "1.2.23",
+  "engines": {
+    "node": ">=10"
+  },
   "description": "Prototype for the computation of legend lines positions",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint \"**/*.{ts,tsx}\" --ignore-pattern node_modules/",
     "test": "jest",
     "test-dev": "NODE_ENV=development npx jest --watch",
+    "test-coverage": "jest --coverage",
+    "test-coverage-dev": "NODE_ENV=development jest --coverage --watchAll",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "docs": "jsdoc -c jsdoc.json"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -22,6 +34,7 @@
   "homepage": "https://github.com/BinPar/legendPrototype#readme",
   "dependencies": {
     "@types/mocha": "^5.2.7",
+    "enzyme-to-json": "^3.4.4",
     "lorem-ipsum": "^2.0.3",
     "next": "^9.2.2",
     "random-seed": "^0.3.0",
@@ -29,15 +42,18 @@
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.18",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^24.9.1",
     "@types/node": "^12.7.8",
     "@types/react": "^16.9.3",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
     "babel-jest": "^24.9.0",
     "better-docs": "^1.4.7",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
+    "coveralls": "^3.0.11",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",

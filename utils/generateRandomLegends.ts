@@ -18,7 +18,7 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
 
   // Creates the random generator based on a specific seed
   const random = rnd.create(seed);
-
+  
   // Total Number of points to generate
   const totalPoints = random.intBetween(minPoints, maxPoints);
 
@@ -26,7 +26,7 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
   const interestPoints = new Array<LabelInfo>(totalPoints)
     .fill({ key: '', name: '', cx: 0, cy: 0, tx: 0, ty: 0 })
     .map(() => ({
-      key: Math.random().toString(),
+      key: random.string(10),
       name: loremIpsum({
         random: random.random,
         sentenceLowerBound: 1,

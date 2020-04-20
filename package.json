@@ -13,7 +13,7 @@
     "test": "jest",
     "test-dev": "NODE_ENV=development npx jest --watch",
     "test-coverage": "jest --coverage",
-    "test-coverage-dev": "jest --coverage --watchAll",
+    "test-coverage-dev": "NODE_ENV=development jest --coverage --watchAll",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "docs": "jsdoc -c jsdoc.json"
   },

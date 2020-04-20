@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from 'enzyme';
 import mockNextUseRouter from '../../mocks/mockNextUseRouter';
 import SeedPage from '../../../pages/sample/[seed]';
-import Chart from '../../../components/Chart';
+import { setForceServerSimulation } from '../../../utils/isClient';
 
 /**
  * Checks that the sample page redirects to some other
@@ -25,20 +25,16 @@ test('Home Page', () => {
     asPath: `/sample/${seed}`,
   });
 
+  // Disable client detection
+  setForceServerSimulation(true);
+
   // Renders the page
-  const seedPage = mount(<SeedPage />);
+  const seedPage = render(<SeedPage />);
 
-  // Get the first chart component
-  const chart = seedPage.find(Chart).first();
-
-  // Check that it have the right seed provided 
-  // by the mocked router
-  expect(chart.props().seed).toBe(seed.toString());
-  
+  // Enable client detection
+  setForceServerSimulation(false);
+    
   // Verify that the Virtual DOM is not changed
-  expect(chart).toMatchSnapshot();
-
-  // Unmount the component
-  seedPage.unmount();
+  expect(seedPage).toMatchSnapshot();
 
 });

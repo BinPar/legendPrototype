@@ -7,6 +7,7 @@
     "jsdocs",
     "prefetch",
     "recurse",
-    "seedrandom"
+    "seedrandom",
+    "unmount"
   ]
 }

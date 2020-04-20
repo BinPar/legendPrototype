@@ -7,6 +7,7 @@ module.exports = {
     '^.+\\.jsx?$': require.resolve('babel-jest'),
     '^.+\\.tsx?$': 'ts-jest',
   },
+  coverageReporters: ['text', 'json', 'html'],
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   snapshotSerializers: ['enzyme-to-json/serializer'],

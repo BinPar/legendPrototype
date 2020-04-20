@@ -31,6 +31,9 @@ test('Home Page', () => {
   // Renders the page
   const page = mount(<Index />);
 
+  // We check that the content of the page is not changed
+  expect(page).toMatchSnapshot();
+
   // The home page have no text on it, just redirects to some page
   expect(page.text()).toMatch('');  
 

@@ -1,6 +1,6 @@
 {
   "name": "legend-prototype",
-  "version": "1.2.3",
+  "version": "1.2.23",
   "engines": {
     "node": ">=10"
   },

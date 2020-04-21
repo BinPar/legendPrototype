@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Filter from './Filter';
 import useWindowSize from '../hooks/useWindowSize';
-import { ChartProps } from '../model/chart';
+import { ChartProps, LabelInfo } from '../model/chart';
 import generateRandomLegends from '../utils/generateRandomLegends';
 import InterestPoint from './InterestPoint';
 
@@ -14,12 +14,17 @@ import InterestPoint from './InterestPoint';
 const Chart = ({ seed }: ChartProps): JSX.Element => {
   const size = useWindowSize();
   const router = useRouter();
+  const [interestPoints, setInterestPoints] = useState<LabelInfo[]>(
+    new Array<LabelInfo>(),
+  );
 
   if (!size.width) {
     return null;
   }
 
-  const interestPoints = generateRandomLegends(seed, size);
+  useEffect((): void => {
+    setInterestPoints(generateRandomLegends(seed, size));
+  }, [seed, size]);
 
   /**
    * Generates a new random URL when we click anywhere in the SVG
@@ -28,18 +33,18 @@ const Chart = ({ seed }: ChartProps): JSX.Element => {
   const update = (): void => {
     let newSeed = seed;
 
-    // There is almost no option, but we asure that 
+    // There is almost no option, but we asure that
     // we do not repeat the last seed
     do {
       newSeed = `${Math.floor(Math.random() * 10000000)}`;
     } while (newSeed === seed);
 
-    router.push(
-      '/sample/[seed]',
-      `/sample/${newSeed}`,
-      { shallow: true },
-    );
+    router.push('/sample/[seed]', `/sample/${newSeed}`, { shallow: true });
   };
+
+  if (interestPoints.length === 0) {
+    return <div className="view" />;
+  }
 
   return (
     <div className="view">
@@ -49,6 +54,18 @@ const Chart = ({ seed }: ChartProps): JSX.Element => {
         </defs>
         {interestPoints.map(InterestPoint)}
       </svg>
+      {interestPoints.map((label) => (
+        <div
+          key={label.key}
+          className={`label ${label.labelPosition}`}
+          style={{
+            top: label.ty,
+            left: label.labelPosition === 'left' ? 0 : label.tx,
+          }}
+        >
+          {label.name}
+        </div>
+      ))}
     </div>
   );
 };

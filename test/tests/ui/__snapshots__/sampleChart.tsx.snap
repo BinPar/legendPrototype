@@ -62,19 +62,15 @@ exports[`Home Page 1`] = `
           cy={540.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="^mzAmh_\`0\\""
-          name="Commodo Lorem consequat elit"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={319.4}
-          x2={512}
+          x2={616}
           y1={540.8}
-          y2={384}
+          y2={69.81818181818181}
         />
       </g>
       <g
@@ -86,19 +82,15 @@ exports[`Home Page 1`] = `
           cy={323.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="]wwbXgrOUN"
-          name="Quis consectetur nisi Lorem"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={760.4}
-          x2={512}
+          x2={430}
           y1={323.8}
-          y2={384}
+          y2={51.2}
         />
       </g>
       <g
@@ -110,19 +102,15 @@ exports[`Home Page 1`] = `
           cy={82.80000000000001}
           fill="#000"
           filter="url(#sofGlow)"
-          key="wFb@u6CoW["
-          name="Lorem labore magna"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={732.4}
-          x2={512}
+          x2={628}
           y1={82.80000000000001}
-          y2={384}
+          y2={102.4}
         />
       </g>
       <g
@@ -134,19 +122,15 @@ exports[`Home Page 1`] = `
           cy={93.80000000000001}
           fill="#000"
           filter="url(#sofGlow)"
-          key="\\"ruq(0#=nn"
-          name="Velit non sunt"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={616.4}
-          x2={512}
+          x2={716}
           y1={93.80000000000001}
-          y2={384}
+          y2={153.60000000000002}
         />
       </g>
       <g
@@ -158,19 +142,15 @@ exports[`Home Page 1`] = `
           cy={603.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="D26eR]EfPd"
-          name="Velit reprehenderit sunt adipisicing"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={177.4}
-          x2={512}
+          x2={792}
           y1={603.8}
-          y2={384}
+          y2={139.63636363636363}
         />
       </g>
       <g
@@ -182,19 +162,15 @@ exports[`Home Page 1`] = `
           cy={395.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="AL{;[T&x4'"
-          name="Amet"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={664.4}
-          x2={512}
+          x2={936}
           y1={395.8}
-          y2={384}
+          y2={204.8}
         />
       </g>
       <g
@@ -206,19 +182,15 @@ exports[`Home Page 1`] = `
           cy={213.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="\`2Rd>&?ZD%"
-          name="Amet pariatur est officia"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={539.4}
-          x2={512}
+          x2={474}
           y1={213.8}
-          y2={384}
+          y2={256}
         />
       </g>
       <g
@@ -230,19 +202,15 @@ exports[`Home Page 1`] = `
           cy={360.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="1uq/Mq7Fb*"
-          name="Do"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={526.4}
-          x2={512}
+          x2={980}
           y1={360.8}
-          y2={384}
+          y2={307.20000000000005}
         />
       </g>
       <g
@@ -254,19 +222,15 @@ exports[`Home Page 1`] = `
           cy={662.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="q\\"x1d\\"tM/q"
-          name="Fugiat laborum nostrud"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={112.4}
-          x2={512}
+          x2={484}
           y1={662.8}
-          y2={384}
+          y2={209.45454545454544}
         />
       </g>
       <g
@@ -278,19 +242,15 @@ exports[`Home Page 1`] = `
           cy={445.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="eaO;Z]lN\\"\\""
-          name="Incididunt ipsum Lorem"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={728.4}
-          x2={512}
+          x2={540}
           y1={445.8}
-          y2={384}
+          y2={358.40000000000003}
         />
       </g>
       <g
@@ -302,19 +262,15 @@ exports[`Home Page 1`] = `
           cy={394.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="b(\`QS\\\\gF7j"
-          name="Amet commodo"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={274.4}
-          x2={512}
+          x2={264}
           y1={394.8}
-          y2={384}
+          y2={279.27272727272725}
         />
       </g>
       <g
@@ -326,19 +282,15 @@ exports[`Home Page 1`] = `
           cy={111.80000000000001}
           fill="#000"
           filter="url(#sofGlow)"
-          key=";n$\`WKxF[6"
-          name="Deserunt deserunt consequat sunt"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={740.4}
-          x2={512}
+          x2={320}
           y1={111.80000000000001}
-          y2={384}
+          y2={409.6}
         />
       </g>
       <g
@@ -350,19 +302,15 @@ exports[`Home Page 1`] = `
           cy={173.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="y[Nef|fyiV"
-          name="Velit ea"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={448.4}
-          x2={512}
+          x2={176}
           y1={173.8}
-          y2={384}
+          y2={349.09090909090907}
         />
       </g>
       <g
@@ -374,19 +322,15 @@ exports[`Home Page 1`] = `
           cy={483.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key=";ctqH>%oim"
-          name="Excepteur ullamco minim cillum"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={302.4}
-          x2={512}
+          x2={660}
           y1={483.8}
-          y2={384}
+          y2={418.9090909090909}
         />
       </g>
       <g
@@ -398,19 +342,15 @@ exports[`Home Page 1`] = `
           cy={358.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key=")'Z9kP(0*5"
-          name="Quis nostrud"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={508.4}
-          x2={512}
+          x2={264}
           y1={358.8}
-          y2={384}
+          y2={488.7272727272727}
         />
       </g>
       <g
@@ -422,19 +362,15 @@ exports[`Home Page 1`] = `
           cy={206.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="9.\\\\pwcsW'\\\\"
-          name="Qui"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={446.4}
-          x2={512}
+          x2={66}
           y1={206.8}
-          y2={384}
+          y2={558.5454545454545}
         />
       </g>
       <g
@@ -446,19 +382,15 @@ exports[`Home Page 1`] = `
           cy={464.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="rF{[$3KSMv"
-          name="Ex est commodo magna"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={281.4}
-          x2={512}
+          x2={440}
           y1={464.8}
-          y2={384}
+          y2={628.3636363636363}
         />
       </g>
       <g
@@ -470,19 +402,15 @@ exports[`Home Page 1`] = `
           cy={149.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="F4h.it<?\\\\\`"
-          name="Consequat qui"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={871.4}
-          x2={512}
+          x2={738}
           y1={149.8}
-          y2={384}
+          y2={460.8}
         />
       </g>
       <g
@@ -494,19 +422,15 @@ exports[`Home Page 1`] = `
           cy={318.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="\\\\[NwNgr{]w"
-          name="Est sint deserunt"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={600.4}
-          x2={512}
+          x2={650}
           y1={318.8}
-          y2={384}
+          y2={512}
         />
       </g>
       <g
@@ -518,19 +442,15 @@ exports[`Home Page 1`] = `
           cy={272.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="YbO.^=<%1!"
-          name="Cupidatat dolor eu tempor"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={389.4}
-          x2={512}
+          x2={550}
           y1={272.8}
-          y2={384}
+          y2={698.1818181818181}
         />
       </g>
       <g
@@ -542,19 +462,15 @@ exports[`Home Page 1`] = `
           cy={98.80000000000001}
           fill="#000"
           filter="url(#sofGlow)"
-          key="is3r;.O67b"
-          name="Proident"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={840.4}
-          x2={512}
+          x2={848}
           y1={98.80000000000001}
-          y2={384}
+          y2={563.2}
         />
       </g>
       <g
@@ -566,19 +482,15 @@ exports[`Home Page 1`] = `
           cy={583.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="s6<Zd\\\\\\\\,B*"
-          name="Magna consequat"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={569.4}
-          x2={512}
+          x2={694}
           y1={583.8}
-          y2={384}
+          y2={614.4000000000001}
         />
       </g>
       <g
@@ -590,19 +502,15 @@ exports[`Home Page 1`] = `
           cy={163.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="\`bQA:khP9S"
-          name="Adipisicing commodo velit"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={731.4}
-          x2={512}
+          x2={474}
           y1={163.8}
-          y2={384}
+          y2={665.6}
         />
       </g>
       <g
@@ -614,22 +522,306 @@ exports[`Home Page 1`] = `
           cy={269.8}
           fill="#000"
           filter="url(#sofGlow)"
-          key="hN7-?vbJ]6"
-          name="Deserunt sunt consequat reprehenderit"
           r={5}
-          tx={512}
-          ty={384}
         />
         <line
           stroke="black"
           strokeWidth="3"
           x1={583.4}
-          x2={512}
+          x2={210}
           y1={269.8}
-          y2={384}
+          y2={716.8000000000001}
         />
       </g>
     </svg>
+    <div
+      className="label left"
+      key="^mzAmh_\`0\\""
+      style={
+        Object {
+          "left": 0,
+          "top": 69.81818181818181,
+        }
+      }
+    >
+      Commodo Lorem consequat elit
+    </div>
+    <div
+      className="label right"
+      key="]wwbXgrOUN"
+      style={
+        Object {
+          "left": 430,
+          "top": 51.2,
+        }
+      }
+    >
+      Quis consectetur nisi Lorem
+    </div>
+    <div
+      className="label right"
+      key="wFb@u6CoW["
+      style={
+        Object {
+          "left": 628,
+          "top": 102.4,
+        }
+      }
+    >
+      Lorem labore magna
+    </div>
+    <div
+      className="label right"
+      key="\\"ruq(0#=nn"
+      style={
+        Object {
+          "left": 716,
+          "top": 153.60000000000002,
+        }
+      }
+    >
+      Velit non sunt
+    </div>
+    <div
+      className="label left"
+      key="D26eR]EfPd"
+      style={
+        Object {
+          "left": 0,
+          "top": 139.63636363636363,
+        }
+      }
+    >
+      Velit reprehenderit sunt adipisicing
+    </div>
+    <div
+      className="label right"
+      key="AL{;[T&x4'"
+      style={
+        Object {
+          "left": 936,
+          "top": 204.8,
+        }
+      }
+    >
+      Amet
+    </div>
+    <div
+      className="label right"
+      key="\`2Rd>&?ZD%"
+      style={
+        Object {
+          "left": 474,
+          "top": 256,
+        }
+      }
+    >
+      Amet pariatur est officia
+    </div>
+    <div
+      className="label right"
+      key="1uq/Mq7Fb*"
+      style={
+        Object {
+          "left": 980,
+          "top": 307.20000000000005,
+        }
+      }
+    >
+      Do
+    </div>
+    <div
+      className="label left"
+      key="q\\"x1d\\"tM/q"
+      style={
+        Object {
+          "left": 0,
+          "top": 209.45454545454544,
+        }
+      }
+    >
+      Fugiat laborum nostrud
+    </div>
+    <div
+      className="label right"
+      key="eaO;Z]lN\\"\\""
+      style={
+        Object {
+          "left": 540,
+          "top": 358.40000000000003,
+        }
+      }
+    >
+      Incididunt ipsum Lorem
+    </div>
+    <div
+      className="label left"
+      key="b(\`QS\\\\gF7j"
+      style={
+        Object {
+          "left": 0,
+          "top": 279.27272727272725,
+        }
+      }
+    >
+      Amet commodo
+    </div>
+    <div
+      className="label right"
+      key=";n$\`WKxF[6"
+      style={
+        Object {
+          "left": 320,
+          "top": 409.6,
+        }
+      }
+    >
+      Deserunt deserunt consequat sunt
+    </div>
+    <div
+      className="label left"
+      key="y[Nef|fyiV"
+      style={
+        Object {
+          "left": 0,
+          "top": 349.09090909090907,
+        }
+      }
+    >
+      Velit ea
+    </div>
+    <div
+      className="label left"
+      key=";ctqH>%oim"
+      style={
+        Object {
+          "left": 0,
+          "top": 418.9090909090909,
+        }
+      }
+    >
+      Excepteur ullamco minim cillum
+    </div>
+    <div
+      className="label left"
+      key=")'Z9kP(0*5"
+      style={
+        Object {
+          "left": 0,
+          "top": 488.7272727272727,
+        }
+      }
+    >
+      Quis nostrud
+    </div>
+    <div
+      className="label left"
+      key="9.\\\\pwcsW'\\\\"
+      style={
+        Object {
+          "left": 0,
+          "top": 558.5454545454545,
+        }
+      }
+    >
+      Qui
+    </div>
+    <div
+      className="label left"
+      key="rF{[$3KSMv"
+      style={
+        Object {
+          "left": 0,
+          "top": 628.3636363636363,
+        }
+      }
+    >
+      Ex est commodo magna
+    </div>
+    <div
+      className="label right"
+      key="F4h.it<?\\\\\`"
+      style={
+        Object {
+          "left": 738,
+          "top": 460.8,
+        }
+      }
+    >
+      Consequat qui
+    </div>
+    <div
+      className="label right"
+      key="\\\\[NwNgr{]w"
+      style={
+        Object {
+          "left": 650,
+          "top": 512,
+        }
+      }
+    >
+      Est sint deserunt
+    </div>
+    <div
+      className="label left"
+      key="YbO.^=<%1!"
+      style={
+        Object {
+          "left": 0,
+          "top": 698.1818181818181,
+        }
+      }
+    >
+      Cupidatat dolor eu tempor
+    </div>
+    <div
+      className="label right"
+      key="is3r;.O67b"
+      style={
+        Object {
+          "left": 848,
+          "top": 563.2,
+        }
+      }
+    >
+      Proident
+    </div>
+    <div
+      className="label right"
+      key="s6<Zd\\\\\\\\,B*"
+      style={
+        Object {
+          "left": 694,
+          "top": 614.4000000000001,
+        }
+      }
+    >
+      Magna consequat
+    </div>
+    <div
+      className="label right"
+      key="\`bQA:khP9S"
+      style={
+        Object {
+          "left": 474,
+          "top": 665.6,
+        }
+      }
+    >
+      Adipisicing commodo velit
+    </div>
+    <div
+      className="label right"
+      key="hN7-?vbJ]6"
+      style={
+        Object {
+          "left": 210,
+          "top": 716.8000000000001,
+        }
+      }
+    >
+      Deserunt sunt consequat reprehenderit
+    </div>
   </div>
 </Chart>
 `;

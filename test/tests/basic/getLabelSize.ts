@@ -12,11 +12,13 @@ export default test('Check label size calculation', (): void => {
   setForceServerSimulation(true);
   expect(createVirtualLabel()).toBeUndefined();
   expect(getLabelSize('Sort Label')).toBeGreaterThan(0);  
+  setForceServerSimulation(false);
   const lastLabel = getVirtualLabel();
   setVirtualLabel(null);
   expect(getLabelSize('Sort Label')).toBeGreaterThan(0);  
   setVirtualLabel(lastLabel);
   setForceDisableJestDetection(true);
-  expect(getLabelSize('Sort Label')).toBe(0);  
+  expect(getLabelSize('Sort Label')).toBe(0);    
   setForceDisableJestDetection(false);
+  expect(createVirtualLabel()).not.toBeUndefined();
 });

@@ -11,10 +11,6 @@ export default test('Check de random legend generator', (): void => {
     expect(legend.cy).toBeLessThanOrEqual(200);
     expect(legend.cx).toBeGreaterThanOrEqual(0);
     expect(legend.cy).toBeGreaterThanOrEqual(0);
-    expect(legend.tx).toBeLessThanOrEqual(320);
-    expect(legend.ty).toBeLessThanOrEqual(200);
-    expect(legend.tx).toBeGreaterThanOrEqual(0);
-    expect(legend.ty).toBeGreaterThanOrEqual(0);
     expect(legend.key).toBeDefined();
     expect(legend.name.length).toBeGreaterThan(1);
   });

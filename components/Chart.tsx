@@ -9,6 +9,7 @@ import {
   marcCrossingLines,
   haveCrossingLines,
 } from '../utils/detectCrossingLines';
+import removeCrossingLines from '../utils/removeCrossingLines';
 
 /**
  * Generate the chart calculating the legend positions with random
@@ -29,6 +30,7 @@ const Chart = ({ seed }: ChartProps): JSX.Element => {
   useEffect((): void => {
     let result = generateRandomLegends(seed, size);
     if (haveCrossingLines(result)) {
+      result = removeCrossingLines(result);
       result = marcCrossingLines(result);
     }
     setInterestPoints(result);
@@ -68,6 +70,7 @@ const Chart = ({ seed }: ChartProps): JSX.Element => {
           className={`label ${label.labelPosition}`}
           style={{
             top: label.ty,
+            width: label.labelWidth - 15,
             left: label.labelPosition === 'left' ? 0 : label.tx,
           }}
         >

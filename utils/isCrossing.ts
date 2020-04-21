@@ -74,8 +74,9 @@ export const intersects = (
  * @param {LabelInfo} lineB second line to check
  * @returns {boolean} true if the lines do cross each other
  */
-const isCrossing = (lineA: LabelInfo, lineB: LabelInfo): boolean => {
-  return intersects(
+const isCrossing = (lineA: LabelInfo, lineB: LabelInfo): boolean => {  
+  // Point to label to point to label check
+  if (intersects(
     lineA.cx,
     lineA.cy,
     lineA.tx,
@@ -84,7 +85,39 @@ const isCrossing = (lineA: LabelInfo, lineB: LabelInfo): boolean => {
     lineB.cy,
     lineB.tx,
     lineB.ty,
-  );
+  )) {
+    return true;
+  }
+
+  // Point to label to label check
+  if (intersects(
+    lineA.cx,
+    lineA.cy,
+    lineA.tx,
+    lineA.ty,
+    lineB.tx,
+    lineB.ty,
+    lineB.tx + (lineB.labelPosition === 'left' ? -lineB.labelWidth: lineB.labelWidth),
+    lineB.ty,
+  )) {
+    return true;
+  }
+
+  // Label to point to label check
+  if (intersects(
+    lineA.tx,
+    lineA.ty,
+    lineA.tx + (lineA.labelPosition === 'left' ? -lineA.labelWidth: lineA.labelWidth),
+    lineA.ty,
+    lineB.cx,
+    lineB.cy,
+    lineB.tx,
+    lineB.ty,    
+  )) {
+    return true;
+  }
+
+  return false;
 };
 
 export default isCrossing;

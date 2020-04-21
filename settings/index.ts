@@ -25,4 +25,11 @@ export const margin = 0.1;
  * Average width per character in pixels used to mock 
  * in test escenarios the with calculation of the labels
  */
-export const averageCharWidth = 22;
+export const averageCharWidth = 4;
+
+
+/**
+ * Maximum number of iterations to try to optimize
+ * one specific chart
+ */
+export const maxIterations = 100;

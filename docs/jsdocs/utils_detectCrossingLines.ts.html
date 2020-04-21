@@ -5,7 +5,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: pages/404.tsx</title>
+    <title>JSDoc: utils/detectCrossingLines.ts</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -54,7 +54,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>pages/404.tsx</h1>
+                        <h1>utils/detectCrossingLines.ts</h1>
                     </header>
                     
                     
@@ -64,23 +64,64 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React from 'react';
-import Head from 'next/head';
+            <pre class="prettyprint source linenums"><code>import { LabelInfo } from '../model/chart';
+import isCrossing from './isCrossing';
 
 /**
- * Page not found custom error page
+ * Iterates all the legends in the legend info to detect if
+ * there are pairs of crossing lines setting their property
+ * isCrossed
+ * @param {LabelInfo[]} legend Information of the labels to process
+ * @returns {LabelInfo[]} information updated with the isCrossed attribute set
  */
-export default (): JSX.Element => {
-  return (
-    &lt;React.Fragment>
-      &lt;Head>
-        &lt;title>Page not found&lt;/title>
-        &lt;link rel="stylesheet" type="text/css" href="/styles.css" />
-      &lt;/Head>
-      &lt;h1>Error 404: This page could not be found&lt;/h1>
-    &lt;/React.Fragment>
-  );
-};
+export const marcCrossingLines = (legend: LabelInfo[]): LabelInfo[] => {
+  // Reset of isCrossed to false;
+  const result = legend.map(label => ({...label, isCrossed: false}));
+  for (let i=0;i&lt;result.length;i++) {
+    const firstLine = result[i];
+    /**
+     * We can skip the previous checks starting the iterator 
+     * with i+1 to avoid duplicate checks
+     */
+    for (let j=i + 1;j&lt;result.length;j++) {
+      const secondLine = result[j];      
+      if (isCrossing(firstLine,secondLine)) {
+        // If they are crossing we mark both as crossed
+        firstLine.isCrossed = true;
+        secondLine.isCrossed = true;
+      }
+    }
+  }
+  return result;
+}
+
+/**
+ * Iterates all the legends in the legend info to detect if
+ * there are at least one pair of crossing lines
+ * @param {LabelInfo[]} legend Information of the labels to process
+ * @returns {boolean} true it there is at least one crossing line
+ */
+export const haveCrossingLines = (legend: LabelInfo[]): boolean => {  
+  for (let i=0;i&lt;legend.length;i++) {
+    const firstLine = legend[i];
+    /**
+     * We can skip the previous checks starting the iterator 
+     * with i+1 to avoid duplicate checks
+     */
+    for (let j=i;j&lt;legend.length;j++) {
+      const secondLine = legend[j];
+      if (isCrossing(firstLine,secondLine)) {
+        /**
+         * We only need to find one pair of crossing legends to asume
+         * that there are crossing lines
+         */ 
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 </code></pre>
         </article>
     </section>

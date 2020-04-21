@@ -5,6 +5,10 @@ import useWindowSize from '../hooks/useWindowSize';
 import { ChartProps, LabelInfo } from '../model/chart';
 import generateRandomLegends from '../utils/generateRandomLegends';
 import InterestPoint from './InterestPoint';
+import {
+  marcCrossingLines,
+  haveCrossingLines,
+} from '../utils/detectCrossingLines';
 
 /**
  * Generate the chart calculating the legend positions with random
@@ -23,7 +27,11 @@ const Chart = ({ seed }: ChartProps): JSX.Element => {
   }
 
   useEffect((): void => {
-    setInterestPoints(generateRandomLegends(seed, size));
+    let result = generateRandomLegends(seed, size);
+    if (haveCrossingLines(result)) {
+      result = marcCrossingLines(result);
+    }
+    setInterestPoints(result);
   }, [seed, size]);
 
   /**

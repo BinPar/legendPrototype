@@ -57,13 +57,6 @@ exports[`Home Page 1`] = `
         filter="url(#sofGlow)"
         key="wFb@u6CoW["
       >
-        <circle
-          cx={732.4}
-          cy={82.80000000000001}
-          fill="#000"
-          filter="url(#sofGlow)"
-          r={5}
-        />
         <line
           stroke="black"
           strokeWidth="3"
@@ -72,18 +65,18 @@ exports[`Home Page 1`] = `
           y1={82.80000000000001}
           y2={51.2}
         />
+        <circle
+          cx={732.4}
+          cy={82.80000000000001}
+          fill="#000"
+          filter="url(#sofGlow)"
+          r={5}
+        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="\\"ruq(0#=nn"
       >
-        <circle
-          cx={616.4}
-          cy={93.80000000000001}
-          fill="#000"
-          filter="url(#sofGlow)"
-          r={5}
-        />
         <line
           stroke="black"
           strokeWidth="3"
@@ -92,18 +85,18 @@ exports[`Home Page 1`] = `
           y1={93.80000000000001}
           y2={102.4}
         />
+        <circle
+          cx={616.4}
+          cy={93.80000000000001}
+          fill="#000"
+          filter="url(#sofGlow)"
+          r={5}
+        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="is3r;.O67b"
       >
-        <circle
-          cx={840.4}
-          cy={98.80000000000001}
-          fill="#000"
-          filter="url(#sofGlow)"
-          r={5}
-        />
         <line
           stroke="black"
           strokeWidth="3"
@@ -112,11 +105,26 @@ exports[`Home Page 1`] = `
           y1={98.80000000000001}
           y2={153.60000000000002}
         />
+        <circle
+          cx={840.4}
+          cy={98.80000000000001}
+          fill="#000"
+          filter="url(#sofGlow)"
+          r={5}
+        />
       </g>
       <g
         filter="url(#sofGlow)"
         key=";n$\`WKxF[6"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={740.4}
+          x2={320}
+          y1={111.80000000000001}
+          y2={204.8}
+        />
         <circle
           cx={740.4}
           cy={111.80000000000001}
@@ -124,26 +132,11 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={740.4}
-          x2={320}
-          y1={111.80000000000001}
-          y2={204.8}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="F4h.it<?\\\\\`"
       >
-        <circle
-          cx={871.4}
-          cy={149.8}
-          fill="#000"
-          filter="url(#sofGlow)"
-          r={5}
-        />
         <line
           stroke="black"
           strokeWidth="3"
@@ -152,11 +145,26 @@ exports[`Home Page 1`] = `
           y1={149.8}
           y2={256}
         />
+        <circle
+          cx={871.4}
+          cy={149.8}
+          fill="#000"
+          filter="url(#sofGlow)"
+          r={5}
+        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="\`bQA:khP9S"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={731.4}
+          x2={474}
+          y1={163.8}
+          y2={307.20000000000005}
+        />
         <circle
           cx={731.4}
           cy={163.8}
@@ -164,26 +172,11 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={731.4}
-          x2={474}
-          y1={163.8}
-          y2={307.20000000000005}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="y[Nef|fyiV"
       >
-        <circle
-          cx={448.4}
-          cy={173.8}
-          fill="#000"
-          filter="url(#sofGlow)"
-          r={5}
-        />
         <line
           stroke="black"
           strokeWidth="3"
@@ -192,11 +185,26 @@ exports[`Home Page 1`] = `
           y1={173.8}
           y2={69.81818181818181}
         />
+        <circle
+          cx={448.4}
+          cy={173.8}
+          fill="#000"
+          filter="url(#sofGlow)"
+          r={5}
+        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="9.\\\\pwcsW'\\\\"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={446.4}
+          x2={66}
+          y1={206.8}
+          y2={139.63636363636363}
+        />
         <circle
           cx={446.4}
           cy={206.8}
@@ -204,19 +212,19 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={446.4}
-          x2={66}
-          y1={206.8}
-          y2={139.63636363636363}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="\`2Rd>&?ZD%"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={539.4}
+          x2={474}
+          y1={213.8}
+          y2={358.40000000000003}
+        />
         <circle
           cx={539.4}
           cy={213.8}
@@ -224,19 +232,19 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={539.4}
-          x2={474}
-          y1={213.8}
-          y2={358.40000000000003}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="hN7-?vbJ]6"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={583.4}
+          x2={210}
+          y1={269.8}
+          y2={409.6}
+        />
         <circle
           cx={583.4}
           cy={269.8}
@@ -244,26 +252,11 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={583.4}
-          x2={210}
-          y1={269.8}
-          y2={409.6}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="YbO.^=<%1!"
       >
-        <circle
-          cx={389.4}
-          cy={272.8}
-          fill="#000"
-          filter="url(#sofGlow)"
-          r={5}
-        />
         <line
           stroke="black"
           strokeWidth="3"
@@ -272,11 +265,26 @@ exports[`Home Page 1`] = `
           y1={272.8}
           y2={209.45454545454544}
         />
+        <circle
+          cx={389.4}
+          cy={272.8}
+          fill="#000"
+          filter="url(#sofGlow)"
+          r={5}
+        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="\\\\[NwNgr{]w"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={600.4}
+          x2={650}
+          y1={318.8}
+          y2={460.8}
+        />
         <circle
           cx={600.4}
           cy={318.8}
@@ -284,19 +292,19 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={600.4}
-          x2={650}
-          y1={318.8}
-          y2={460.8}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="]wwbXgrOUN"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={760.4}
+          x2={430}
+          y1={323.8}
+          y2={512}
+        />
         <circle
           cx={760.4}
           cy={323.8}
@@ -304,19 +312,19 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={760.4}
-          x2={430}
-          y1={323.8}
-          y2={512}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key=")'Z9kP(0*5"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={508.4}
+          x2={264}
+          y1={358.8}
+          y2={279.27272727272725}
+        />
         <circle
           cx={508.4}
           cy={358.8}
@@ -324,19 +332,19 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={508.4}
-          x2={264}
-          y1={358.8}
-          y2={279.27272727272725}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="1uq/Mq7Fb*"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={526.4}
+          x2={980}
+          y1={360.8}
+          y2={563.2}
+        />
         <circle
           cx={526.4}
           cy={360.8}
@@ -344,19 +352,19 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={526.4}
-          x2={980}
-          y1={360.8}
-          y2={563.2}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="b(\`QS\\\\gF7j"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={274.4}
+          x2={264}
+          y1={394.8}
+          y2={349.09090909090907}
+        />
         <circle
           cx={274.4}
           cy={394.8}
@@ -364,19 +372,19 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={274.4}
-          x2={264}
-          y1={394.8}
-          y2={349.09090909090907}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="AL{;[T&x4'"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={664.4}
+          x2={936}
+          y1={395.8}
+          y2={614.4000000000001}
+        />
         <circle
           cx={664.4}
           cy={395.8}
@@ -384,19 +392,19 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={664.4}
-          x2={936}
-          y1={395.8}
-          y2={614.4000000000001}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="eaO;Z]lN\\"\\""
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={728.4}
+          x2={540}
+          y1={445.8}
+          y2={665.6}
+        />
         <circle
           cx={728.4}
           cy={445.8}
@@ -404,26 +412,11 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={728.4}
-          x2={540}
-          y1={445.8}
-          y2={665.6}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="rF{[$3KSMv"
       >
-        <circle
-          cx={281.4}
-          cy={464.8}
-          fill="#000"
-          filter="url(#sofGlow)"
-          r={5}
-        />
         <line
           stroke="black"
           strokeWidth="3"
@@ -432,11 +425,26 @@ exports[`Home Page 1`] = `
           y1={464.8}
           y2={418.9090909090909}
         />
+        <circle
+          cx={281.4}
+          cy={464.8}
+          fill="#000"
+          filter="url(#sofGlow)"
+          r={5}
+        />
       </g>
       <g
         filter="url(#sofGlow)"
         key=";ctqH>%oim"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={302.4}
+          x2={660}
+          y1={483.8}
+          y2={488.7272727272727}
+        />
         <circle
           cx={302.4}
           cy={483.8}
@@ -444,26 +452,11 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={302.4}
-          x2={660}
-          y1={483.8}
-          y2={488.7272727272727}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="^mzAmh_\`0\\""
       >
-        <circle
-          cx={319.4}
-          cy={540.8}
-          fill="#000"
-          filter="url(#sofGlow)"
-          r={5}
-        />
         <line
           stroke="black"
           strokeWidth="3"
@@ -472,11 +465,26 @@ exports[`Home Page 1`] = `
           y1={540.8}
           y2={558.5454545454545}
         />
+        <circle
+          cx={319.4}
+          cy={540.8}
+          fill="#000"
+          filter="url(#sofGlow)"
+          r={5}
+        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="s6<Zd\\\\\\\\,B*"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={569.4}
+          x2={694}
+          y1={583.8}
+          y2={716.8000000000001}
+        />
         <circle
           cx={569.4}
           cy={583.8}
@@ -484,19 +492,19 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={569.4}
-          x2={694}
-          y1={583.8}
-          y2={716.8000000000001}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="D26eR]EfPd"
       >
+        <line
+          stroke="red"
+          strokeWidth="3"
+          x1={177.4}
+          x2={792}
+          y1={603.8}
+          y2={628.3636363636363}
+        />
         <circle
           cx={177.4}
           cy={603.8}
@@ -504,26 +512,11 @@ exports[`Home Page 1`] = `
           filter="url(#sofGlow)"
           r={5}
         />
-        <line
-          stroke="black"
-          strokeWidth="3"
-          x1={177.4}
-          x2={792}
-          y1={603.8}
-          y2={628.3636363636363}
-        />
       </g>
       <g
         filter="url(#sofGlow)"
         key="q\\"x1d\\"tM/q"
       >
-        <circle
-          cx={112.4}
-          cy={662.8}
-          fill="#000"
-          filter="url(#sofGlow)"
-          r={5}
-        />
         <line
           stroke="black"
           strokeWidth="3"
@@ -531,6 +524,13 @@ exports[`Home Page 1`] = `
           x2={484}
           y1={662.8}
           y2={698.1818181818181}
+        />
+        <circle
+          cx={112.4}
+          cy={662.8}
+          fill="#000"
+          filter="url(#sofGlow)"
+          r={5}
         />
       </g>
     </svg>

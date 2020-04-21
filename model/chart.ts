@@ -18,6 +18,8 @@ export interface LabelInfo {
   labelWidth: number;
   /** Label position (right or left) */
   labelPosition: 'right' | 'left';
+  /** True when the line is crossed by another line */
+  isCrossed: boolean;
 }
 
 /**

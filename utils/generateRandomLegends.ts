@@ -23,6 +23,7 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
     name: '',
     labelWidth: 0,
     labelPosition: 'left',
+    isCrossed: false,
     cx: 0,
     cy: 0,
     tx: 0,
@@ -90,6 +91,10 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
     right: size.height / (totalLabels.right + 1),
   };
 
+  /**
+   * Counter to store the information of the 
+   * current labels on left and right
+   */
   const currentLabels = {
     left: 0,
     right: 0,

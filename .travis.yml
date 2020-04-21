@@ -14,5 +14,5 @@ script:
   - npm run build
   - npm run test
   - npm run lint
-  - npm run audit
+  - npm audit
   - npm run coveralls

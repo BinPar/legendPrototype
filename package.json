@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "docker-build": "rm -rf .next;next build;docker build --rm --pull -f \"./Dockerfile\" -t \"legendprototype:latest\" \".\"",
+    "docker-build": "rm -rf .next;next build;docker build --rm --pull -f \"./dockerfile\" -t \"legendprototype:latest\" \".\"",
     "docker-start": "echo \"Starting docker container and attaching it to: http://localhost:4000/\";docker run -p 4000:80 legendprototype:latest",
     "start": "next start -p 80",
     "lint": "eslint \"**/*.{ts,tsx}\" --ignore-pattern node_modules/",

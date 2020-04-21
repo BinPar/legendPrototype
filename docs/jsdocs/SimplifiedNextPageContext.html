@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: ChartProps</title>
+    <title>JSDoc: SimplifiedNextPageContext</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -52,7 +52,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Interface</p>
-                        <h1>ChartProps</h1>
+                        <h1>SimplifiedNextPageContext</h1>
                     </header>
                     
                     
@@ -64,7 +64,7 @@
 
 <header>
     
-        <h2>ChartProps</h2>
+        <h2>SimplifiedNextPageContext</h2>
         
     
 </header>
@@ -73,7 +73,10 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Settings of the current chart</p></div>
+            <div class="description"><p>We typically use NextPageContext imported for next
+as the type of the input parameter for getInitialProps
+but in this case we just need this small subset
+that is easier for mocking requests</p></div>
         
 
         
@@ -112,9 +115,9 @@
 
     
         <p class="tag-source">
-            <a href="model_chart.ts.html" class="button">View Source</a>
+            <a href="pages__error.tsx.html" class="button">View Source</a>
             <span>
-                <a href="model_chart.ts.html">model/chart.ts</a>, <a href="model_chart.ts.html#line31">line 31</a>
+                <a href="pages__error.tsx.html">pages/_error.tsx</a>, <a href="pages__error.tsx.html#line47">line 47</a>
             </span>
         </p>
     
@@ -147,16 +150,16 @@
     <span class="method-parameter is-pulled-right">
         <label>Type:</label>
         
-<span class="param-type">string</span>
+<span class="param-type"><a href="ErrorProps.html">ErrorProps</a></span>
 
 
     </span>
 
-<h4 class="name" id="seed">
-    <a class="href-link" href="#seed">#</a>
+<h4 class="name" id="err">
+    <a class="href-link" href="#err">#</a>
     
     <span class="code-name">
-        seed
+        err
     </span>
     
         <span class='tag'>Optional</span>
@@ -167,9 +170,7 @@
 
 
 <div class="description">
-    <p>Seed of the chart: the same seed will generate exactly the same random result
-similar to how it works in MineCraft in order to allow to share the URL of any
-unusual combination</p>
+    <p>Error info</p>
 </div>
 
 
@@ -209,9 +210,88 @@ unusual combination</p>
 
     
         <p class="tag-source">
-            <a href="model_chart.ts.html" class="button">View Source</a>
+            <a href="pages__error.tsx.html" class="button">View Source</a>
             <span>
-                <a href="model_chart.ts.html">model/chart.ts</a>, <a href="model_chart.ts.html#line35">line 35</a>
+                <a href="pages__error.tsx.html">pages/_error.tsx</a>, <a href="pages__error.tsx.html#line60">line 60</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type"><a href="ErrorProps.html">ErrorProps</a></span>
+
+
+    </span>
+
+<h4 class="name" id="res">
+    <a class="href-link" href="#res">#</a>
+    
+    <span class="code-name">
+        res
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Response info</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="pages__error.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="pages__error.tsx.html">pages/_error.tsx</a>, <a href="pages__error.tsx.html#line54">line 54</a>
             </span>
         </p>
     

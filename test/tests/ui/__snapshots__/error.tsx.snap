@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page: clientSideError 1`] = `
+<Error>
+  <Head>
+    <Component
+      handleStateChange={null}
+      inAmpMode={false}
+      reduceComponentsToState={[Function]}
+    />
+  </Head>
+  <h1>
+    An error occurred on client
+  </h1>
+</Error>
+`;
+
+exports[`Home Page: errorPageWithErr 1`] = `
+<Error
+  statusCode={501}
+>
+  <Head>
+    <Component
+      handleStateChange={null}
+      inAmpMode={false}
+      reduceComponentsToState={[Function]}
+    />
+  </Head>
+  <h1>
+    An error 501 occurred on server
+  </h1>
+</Error>
+`;
+
+exports[`Home Page: errorPageWithNoInfo 1`] = `
+<Error
+  statusCode={404}
+>
+  <Head>
+    <Component
+      handleStateChange={null}
+      inAmpMode={false}
+      reduceComponentsToState={[Function]}
+    />
+  </Head>
+  <h1>
+    An error 404 occurred on server
+  </h1>
+</Error>
+`;
+
+exports[`Home Page: errorPageWithResponse 1`] = `
+<Error
+  statusCode={500}
+>
+  <Head>
+    <Component
+      handleStateChange={null}
+      inAmpMode={false}
+      reduceComponentsToState={[Function]}
+    />
+  </Head>
+  <h1>
+    An error 500 occurred on server
+  </h1>
+</Error>
+`;

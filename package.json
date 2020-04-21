@@ -11,10 +11,12 @@
     "start": "next start",
     "lint": "eslint \"**/*.{ts,tsx}\" --ignore-pattern node_modules/",
     "test": "jest",
+    "test-clear": "rm -rf test/tests/ui/__snapshots__;rm -rf coverage",
     "test-dev": "NODE_ENV=development npx jest --watch",
     "test-coverage": "jest --coverage",
     "test-coverage-dev": "NODE_ENV=development jest --coverage --watchAll",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "test-full": "npm run test-clear;npm run test;npm run test-coverage;npm run lint;npm audit;npm run docs",
     "docs": "jsdoc -c jsdoc.json"
   },
   "jest": {

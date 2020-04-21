@@ -43,8 +43,7 @@ const useWindowSize = (): Size => {
    * Recalculates the size when the component is mounted and
    * updates it when the window resizes.
    * It never recalculates when any other property changes
-   * @returns {() => void} Clear effect to remove the resize event
-   * listener
+   * @returns Function to clear effect to remove the resize event listener
    */
   useEffect(() => {
     const handleResize = (): void => {

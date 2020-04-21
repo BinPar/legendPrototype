@@ -19,3 +19,10 @@ export const maxPoints = 30;
  * 0 will mean no margin 0.5 half of the screen
  */
 export const margin = 0.1;
+
+
+/**
+ * Average width per character in pixels used to mock 
+ * in test escenarios the with calculation of the labels
+ */
+export const averageCharWidth = 22;

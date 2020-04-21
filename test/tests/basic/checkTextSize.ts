@@ -5,7 +5,7 @@
  * and at the end the mocked width is just the number of chars in the string
  * and this is to low to generate crossing lines in the legend model
  */
-export default test('Home Page', () => {  
+export default test('Check text size', () => {  
   // Creates a canvas DOM element
   const canvas = document.createElement('canvas');
   // It needs to be created

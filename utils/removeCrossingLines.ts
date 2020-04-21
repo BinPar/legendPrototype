@@ -1,7 +1,7 @@
 import { LabelInfo } from '../model/chart';
 import isCrossing from './isCrossing';
 import { haveCrossingLines } from './detectCrossingLines';
-import { maxIterations } from '../settings';
+import { maxIterations, securityMargin } from '../settings';
 
 /**
  * Swap the legend vertical position of two legends
@@ -36,12 +36,14 @@ const swapLegends = (
      * more space than the required for this operation.
      */
     if (legends.a.labelWidth > legends.b.labelWidth) {
-      legends.b.labelWidth += 10;
-      legends.b.tx += legends.b.labelPosition === 'left' ? 10 : -10;
+      legends.b.labelWidth += securityMargin;
+      legends.b.tx +=
+        legends.b.labelPosition === 'left' ? securityMargin : -securityMargin;
     }
     if (legends.a.labelWidth < legends.b.labelWidth) {
-      legends.a.labelWidth += 10;
-      legends.a.tx += legends.a.labelPosition === 'left' ? 10 : -10;
+      legends.a.labelWidth += securityMargin;
+      legends.a.tx +=
+        legends.a.labelPosition === 'left' ? securityMargin : -securityMargin;
     }
   }
 };
@@ -96,7 +98,7 @@ const removeCrossingLines = (legend: LabelInfo[]): LabelInfo[] => {
   while (i++ < maxIterations && haveCrossingLines(result)) {
     result = swapCrossingLines(result, i);
   }
-  
+
   return result;
 };
 

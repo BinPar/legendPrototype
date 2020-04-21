@@ -61,9 +61,11 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
    */
   interestPoints = interestPoints.map(
     (label: LabelInfo): LabelInfo => {
+      const labelWidth = getLabelSize(label.name);
       const result: LabelInfo = {
         ...label,
-        labelWidth: getLabelSize(label.name),
+        labelWidth,
+        originalLabelWidth: labelWidth,
         labelPosition: label.cx <= size.width / 2 ? 'left' : 'right',
       };
       return result;

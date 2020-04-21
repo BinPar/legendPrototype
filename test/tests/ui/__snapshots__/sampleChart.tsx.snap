@@ -401,7 +401,7 @@ exports[`Home Page 1`] = `
           stroke="black"
           strokeWidth="3"
           x1={526.4}
-          x2={1016}
+          x2={1012}
           y1={360.8}
           y2={665.6}
         />
@@ -760,9 +760,9 @@ exports[`Home Page 1`] = `
       key="1uq/Mq7Fb*"
       style={
         Object {
-          "left": 1016,
+          "left": 1012,
           "top": 665.6,
-          "width": -7,
+          "width": -3,
         }
       }
     >

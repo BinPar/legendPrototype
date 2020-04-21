@@ -16,6 +16,8 @@ export interface LabelInfo {
   ty: number;
   /** The with of the label in pixels */
   labelWidth: number;
+  /** The with of the label in pixels before increasing */
+  originalLabelWidth?: number;
   /** Label position (right or left) */
   labelPosition: 'right' | 'left';
   /** True when the line is crossed by another line */

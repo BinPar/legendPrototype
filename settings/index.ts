@@ -33,3 +33,8 @@ export const averageCharWidth = 4;
  * one specific chart
  */
 export const maxIterations = 100;
+
+/**
+ * Security Margin in pixels between the label reft and right border and the lines
+ */
+export const securityMargin = 4;

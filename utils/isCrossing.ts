@@ -1,4 +1,5 @@
 import { LabelInfo } from '../model/chart';
+import { securityMargin } from '../settings';
 
 /**
  * Detects if the segments (ax1,ay1)-(ax2,ay2) and (bx1,by1)-(bx2,by2)
@@ -89,25 +90,27 @@ const isCrossing = (lineA: LabelInfo, lineB: LabelInfo): boolean => {
     return true;
   }
 
+  let labelWidth = lineB.labelWidth + securityMargin;
   // Point to label to label check
   if (intersects(
     lineA.cx,
     lineA.cy,
     lineA.tx,
     lineA.ty,
-    lineB.tx,
+    lineB.tx + (lineB.labelPosition === 'left' ? securityMargin : -securityMargin),
     lineB.ty,
-    lineB.tx + (lineB.labelPosition === 'left' ? -lineB.labelWidth: lineB.labelWidth),
+    lineB.tx + (lineB.labelPosition === 'left' ? -labelWidth : labelWidth),
     lineB.ty,
   )) {
     return true;
   }
 
+  labelWidth = lineA.labelWidth + securityMargin;
   // Label to point to label check
   if (intersects(
-    lineA.tx,
+    lineA.tx + (lineA.labelPosition === 'left' ? securityMargin : -securityMargin),
     lineA.ty,
-    lineA.tx + (lineA.labelPosition === 'left' ? -lineA.labelWidth: lineA.labelWidth),
+    lineA.tx + (lineA.labelPosition === 'left' ? -labelWidth: labelWidth),
     lineA.ty,
     lineB.cx,
     lineB.cy,

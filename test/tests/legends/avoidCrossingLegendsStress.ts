@@ -19,8 +19,6 @@ export default test('Check de random legend generator', (): void => {
       expect(
         legends.filter((legend) => legend.isCrossed).length,
       ).toBeGreaterThan(0);
-    } else {
-      console.log(i);
     }
   }
 });

@@ -45,18 +45,30 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
   }));
 
   /**
+   * All the crossing lines optimization operations
+   * will be drastically reduced if we short the points by
+   * their target Y axis
+   */
+  interestPoints = interestPoints.sort((a, b) => a.cy - b.cy);
+
+  /**
    * Calculates the labelWith for every label based
    * on the text of the label
    * and the label position (left for the x of the point
    * is smaller than the half of the screen and y if it
    * is not)
    */
-  interestPoints = interestPoints.map((label) => ({
-    ...label,
-    labelWidth: getLabelSize(label.name),
-    labelPosition: label.cx <= size.width / 2 ? 'left' : 'right',
-  }));
-  
+  interestPoints = interestPoints.map(
+    (label: LabelInfo): LabelInfo => {
+      const result: LabelInfo = {
+        ...label,
+        labelWidth: getLabelSize(label.name),
+        labelPosition: label.cx <= size.width / 2 ? 'left' : 'right',
+      };
+      return result;
+    },
+  );
+
   /**
    * Calculates total points on right and left
    */
@@ -64,13 +76,13 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
     left: 0,
     right: 0,
   };
-  
+
   interestPoints.forEach((label) => totalLabels[label.labelPosition]++);
 
   /**
-   * We do calculate the vertical separation between each 
-   * legend in the left and in the right that involves to divide 
-   * the height ov the drawing by the number of legends to 
+   * We do calculate the vertical separation between each
+   * legend in the left and in the right that involves to divide
+   * the height ov the drawing by the number of legends to
    * draw increased by one
    */
   const separation = {
@@ -88,8 +100,11 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
    */
   interestPoints = interestPoints.map((label) => ({
     ...label,
-    tx: label.labelPosition === 'left' ? label.labelWidth : size.width - label.labelWidth,
-    ty: (++currentLabels[label.labelPosition]) * separation[label.labelPosition],
+    tx:
+      label.labelPosition === 'left'
+        ? label.labelWidth
+        : size.width - label.labelWidth,
+    ty: ++currentLabels[label.labelPosition] * separation[label.labelPosition],
   }));
 
   return interestPoints;

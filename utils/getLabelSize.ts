@@ -1,29 +1,23 @@
-import isClient from './isClient';
-import {averageCharWidth} from '../settings';
+import createVirtualLabel from './createVirtualLabel';
+import { averageCharWidth } from '../settings';
+import isJest from './isJest';
 
-let virtualLabel: HTMLDivElement;
+let virtualLabel: HTMLDivElement = createVirtualLabel();
 
 /**
- * We do generate a DOM label to be able 
- * to do fast calculations of the with of
- * the label width distinct texts
+ * Calculates the size of pixels os a label for a given label text
+ * @param {string} labelText Text contained in the label
+ * @returns {number} The number of pixels of the width of the text
  */
-if (isClient()) {
-  virtualLabel = document.createElement('div');
-  virtualLabel.className = 'label';  
-}
-
 const getLabelSize = (labelText: string): number => {
-  if (!virtualLabel) {
+  if (!virtualLabel || isJest()) {
+    // If we are in SSR or in Jest (because enzyme do not simulate real DOM)
+    // we need to do an aproximate calculation
     return labelText.length * averageCharWidth;
   }
   virtualLabel.innerText = labelText;
-  let result = virtualLabel.clientWidth;
-  if (typeof jest !== 'undefined') {
-    result = labelText.length * averageCharWidth;
-  }
-  return result;
-}
+  return virtualLabel.clientWidth;
+};
 
 /**
  * Allows you to update the virtual label
@@ -31,8 +25,7 @@ const getLabelSize = (labelText: string): number => {
  */
 export const setVirtualLabel = (newVirtualLabel: HTMLDivElement): void => {
   virtualLabel = newVirtualLabel;
-}
-
+};
 
 /**
  * Allows you to get the current virtual label
@@ -40,6 +33,6 @@ export const setVirtualLabel = (newVirtualLabel: HTMLDivElement): void => {
  */
 export const getVirtualLabel = (): HTMLDivElement => {
   return virtualLabel;
-}
+};
 
 export default getLabelSize;

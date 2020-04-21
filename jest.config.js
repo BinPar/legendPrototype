@@ -1,7 +1,7 @@
 const testRegex = '(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|js?|tsx?|ts?)$';
 
 module.exports = {
-  setupFiles: ['<rootDir>/jest.setup.js'],
+  setupFiles: ['<rootDir>/jest.setup.js', 'jest-canvas-mock'],
   testRegex: testRegex,
   transform: {
     '^.+\\.jsx?$': require.resolve('babel-jest'),

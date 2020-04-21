@@ -2,12 +2,7 @@ import rnd from 'random-seed';
 import { loremIpsum } from 'lorem-ipsum';
 import { LabelInfo } from '../model/chart';
 import { Size } from '../hooks/useWindowSize';
-
-// Maximum number of points of interest to generate in the random view
-const maxPoints = 30;
-
-// Minimum number of points of interest to generate in the random view
-const minPoints = 10;
+import { maxPoints, minPoints, margin } from '../settings';
 
 /**
  * Generates a random Label Info array based on a deterministic seed
@@ -15,10 +10,9 @@ const minPoints = 10;
  * @param {Size} size  size of the window
  */
 const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
-
   // Creates the random generator based on a specific seed
   const random = rnd.create(seed);
-  
+
   // Total Number of points to generate
   const totalPoints = random.intBetween(minPoints, maxPoints);
 
@@ -32,8 +26,8 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
         sentenceLowerBound: 1,
         sentenceUpperBound: 4,
       }).split('.')[0],
-      cx: random.intBetween(size.width * 0.2, size.width * 0.8),
-      cy: random.intBetween(size.height * 0.2, size.height * 0.8),
+      cx: random.intBetween(size.width * margin, size.width * (1 - margin)),
+      cy: random.intBetween(size.height * margin, size.height * (1 - margin)),
       tx: size.width / 2,
       ty: size.height / 2,
     }));

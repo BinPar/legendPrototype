@@ -6,6 +6,7 @@
     "esnext",
     "jsdocs",
     "lcov",
+    "legendprototype",
     "prefetch",
     "recurse",
     "seedrandom",

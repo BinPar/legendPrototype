@@ -8,15 +8,17 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "docker-build": "rm -rf .next;next build;docker build --rm --pull -f \"./Dockerfile\" -t \"legendprototype:latest\" \".\"",
+    "docker-start": "echo \"Starting docker container and attaching it to: http://localhost:4000/\";docker run -p 4000:80 legendprototype:latest",
+    "start": "next start -p 80",
     "lint": "eslint \"**/*.{ts,tsx}\" --ignore-pattern node_modules/",
     "test": "jest",
-    "test-clear": "rm -rf test/tests/ui/__snapshots__;rm -rf coverage",
+    "test-clear": "rm -rf test/tests/ui/__snapshots__;rm -rf coverage;rm -rf .next",
     "test-dev": "NODE_ENV=development npx jest --watch",
     "test-coverage": "jest --coverage",
     "test-coverage-dev": "NODE_ENV=development jest --coverage --watchAll",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "test-full": "npm run test-clear;npm run test;npm run test-coverage;npm run lint;npm audit;npm run docs",
+    "test-full": "npm run test-clear;npm run build;npm run test;npm run test-coverage;npm run lint;npm audit;npm run docs",
     "docs": "jsdoc -c jsdoc.json"
   },
   "jest": {

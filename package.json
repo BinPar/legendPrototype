@@ -1,6 +1,6 @@
 {
   "name": "legend-prototype",
-  "version": "1.2.23",
+  "version": "1.2.25",
   "engines": {
     "node": ">=10"
   },
@@ -8,19 +8,18 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "docker-build": "rm -rf .next;next build;docker build --rm --pull -f \"./dockerfile\" -t \"legendprototype:latest\" \".\"",
+    "docker-start": "echo \"Starting docker container and attaching it to: http://localhost:4000/\";docker run -p 4000:80 legendprototype:latest",
+    "start": "next start -p 80",
     "lint": "eslint \"**/*.{ts,tsx}\" --ignore-pattern node_modules/",
     "test": "jest",
+    "test-clear": "rm -rf test/tests/ui/__snapshots__;rm -rf coverage;rm -rf .next",
     "test-dev": "NODE_ENV=development npx jest --watch",
     "test-coverage": "jest --coverage",
     "test-coverage-dev": "NODE_ENV=development jest --coverage --watchAll",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "test-full": "npm run test-clear;npm run build;npm run test;npm run test-coverage;npm run lint;npm audit;npm run docs",
     "docs": "jsdoc -c jsdoc.json"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/setupTests.js"
-    ]
   },
   "repository": {
     "type": "git",
@@ -34,7 +33,6 @@
   "homepage": "https://github.com/BinPar/legendPrototype#readme",
   "dependencies": {
     "@types/mocha": "^5.2.7",
-    "enzyme-to-json": "^3.4.4",
     "lorem-ipsum": "^2.0.3",
     "next": "^9.2.2",
     "random-seed": "^0.3.0",
@@ -61,8 +59,10 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "jest": "^24.9.0",
+    "jest-canvas-mock": "^2.2.0",
     "jsdoc": "^3.6.3",
     "ts-jest": "^24.1.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "enzyme-to-json": "^3.4.4"
   }
 }

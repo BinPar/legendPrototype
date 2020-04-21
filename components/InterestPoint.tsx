@@ -8,14 +8,20 @@ import { LabelInfo } from '../model/chart';
  */
 const InterestPoint = (point: LabelInfo): JSX.Element => (
   <g key={`${point.key}`} filter="url(#sofGlow)">
-    <circle {...point} r={5} fill="#000" filter="url(#sofGlow)" />
     <line
       x1={point.cx}
       y1={point.cy}
       x2={point.tx}
       y2={point.ty}
-      stroke="black"
+      stroke={point.isCrossed ? 'red' : 'black'}
       strokeWidth="3"
+    />
+    <circle
+      cx={point.cx}
+      cy={point.cy}
+      r={5}
+      fill="#000"
+      filter="url(#sofGlow)"
     />
   </g>
 );

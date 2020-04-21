@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: utils/detectCrossingLines.ts</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -51,8 +53,8 @@
             <div class="column is-9-desktop">
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
-                        <p>Title</p>
-                        <h1>Home</h1>
+                        <p>Source</p>
+                        <h1>utils/detectCrossingLines.ts</h1>
                     </header>
                     
                     
@@ -60,38 +62,71 @@
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h1>EVA Anatomía Legend Prototype <a href="https://travis-ci.org/BinPar/legendPrototype"><img src="https://travis-ci.org/BinPar/legendPrototype.svg?branch=develop" alt="Build Status"></a> <a href="https://coveralls.io/github/BinPar/legendPrototype?branch=develop"><img src="https://coveralls.io/repos/github/BinPar/legendPrototype/badge.svg?branch=develop" alt="Coverage Status"></a></h1>
-<p>Prototype for the computation of legend lines positions for Eva Anatomía</p>
-<h2>Usage</h2>
-<ul>
-<li>Clone de repository</li>
-<li>Use <code>npm i</code> to install all modules</li>
-<li>Use <code>npm run dev</code> to execute</li>
-</ul>
-<p>After that, opening http://localhost:3000 will redirect to a random page with an unique seed based URL that will present a random legend.</p>
-<p>Clicking on the canvas will navigate to a different location.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { LabelInfo } from '../model/chart';
+import isCrossing from './isCrossing';
+
+/**
+ * Iterates all the legends in the legend info to detect if
+ * there are pairs of crossing lines setting their property
+ * isCrossed
+ * @param {LabelInfo[]} legend Information of the labels to process
+ * @returns {LabelInfo[]} information updated with the isCrossed attribute set
+ */
+export const marcCrossingLines = (legend: LabelInfo[]): LabelInfo[] => {
+  // Reset of isCrossed to false;
+  const result = legend.map((label) => ({ ...label, isCrossed: false }));
+  for (let i = 0; i &lt; result.length; i++) {
+    const firstLine = result[i];
+    /**
+     * We can skip the previous checks starting the iterator
+     * with i+1 to avoid duplicate checks
+     */
+    for (let j = i + 1; j &lt; result.length; j++) {
+      const secondLine = result[j];
+      if (isCrossing(firstLine, secondLine)) {
+        // If they are crossing we mark both as crossed
+        firstLine.isCrossed = true;
+        secondLine.isCrossed = true;
+      }
+    }
+  }
+  return result;
+};
+
+/**
+ * Iterates all the legends in the legend info to detect if
+ * there are at least one pair of crossing lines
+ * @param {LabelInfo[]} legend Information of the labels to process
+ * @returns {boolean} true it there is at least one crossing line
+ */
+export const haveCrossingLines = (legend: LabelInfo[]): boolean => {
+  for (let i = 0; i &lt; legend.length; i++) {
+    const firstLine = legend[i];
+    /**
+     * We can skip the previous checks starting the iterator
+     * with i+1 to avoid duplicate checks
+     */
+    for (let j = i; j &lt; legend.length; j++) {
+      const secondLine = legend[j];
+      if (firstLine.labelPosition === secondLine.labelPosition) {
+        if (isCrossing(firstLine, secondLine)) {
+          /**
+           * We only need to find one pair of crossing legends to asume
+           * that there are crossing lines
+           */
+
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+};
+</code></pre>
+        </article>
     </section>
-
-
 
 
 

@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: settings/index.ts</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -51,8 +53,8 @@
             <div class="column is-9-desktop">
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
-                        <p>Title</p>
-                        <h1>Home</h1>
+                        <p>Source</p>
+                        <h1>settings/index.ts</h1>
                     </header>
                     
                     
@@ -60,38 +62,45 @@
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h1>EVA Anatomía Legend Prototype <a href="https://travis-ci.org/BinPar/legendPrototype"><img src="https://travis-ci.org/BinPar/legendPrototype.svg?branch=develop" alt="Build Status"></a> <a href="https://coveralls.io/github/BinPar/legendPrototype?branch=develop"><img src="https://coveralls.io/repos/github/BinPar/legendPrototype/badge.svg?branch=develop" alt="Coverage Status"></a></h1>
-<p>Prototype for the computation of legend lines positions for Eva Anatomía</p>
-<h2>Usage</h2>
-<ul>
-<li>Clone de repository</li>
-<li>Use <code>npm i</code> to install all modules</li>
-<li>Use <code>npm run dev</code> to execute</li>
-</ul>
-<p>After that, opening http://localhost:3000 will redirect to a random page with an unique seed based URL that will present a random legend.</p>
-<p>Clicking on the canvas will navigate to a different location.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Settings used by the application
+ */
+
+
+/**
+ * Maximum number of points of interest to generate in the random view
+ */
+export const minPoints = 10;
+
+/**
+ * Maximum number of points of interest to generate in the random view
+ */
+export const maxPoints = 30;
+
+
+/**
+ * Margin to the borders of the screen from 0 to 0.5:
+ * 0 will mean no margin 0.5 half of the screen
+ */
+export const margin = 0.1;
+
+
+/**
+ * Average width per character in pixels used to mock 
+ * in test escenarios the with calculation of the labels
+ */
+export const averageCharWidth = 4;
+
+
+/**
+ * Maximum number of iterations to try to optimize
+ * one specific chart
+ */
+export const maxIterations = 100;</code></pre>
+        </article>
     </section>
-
-
 
 
 

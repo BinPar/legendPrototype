@@ -1,0 +1,464 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page 1`] = `
+<SeedPage>
+  <Head>
+    <Component
+      handleStateChange={null}
+      inAmpMode={false}
+      reduceComponentsToState={[Function]}
+    />
+  </Head>
+  <Chart
+    seed="9994"
+  >
+    <div
+      className="view"
+    >
+      <svg
+        height={768}
+        onClick={[Function]}
+        width={1024}
+      >
+        <defs>
+          <Filter>
+            <filter
+              height="500%"
+              id="sofGlow"
+              width="500%"
+              x="-200%"
+              y="-200%"
+            >
+              <feMorphology
+                in="SourceAlpha"
+                operator="dilate"
+                radius="1"
+                result="thicken"
+              />
+              <feGaussianBlur
+                in="thicken"
+                result="blurred"
+                stdDeviation="2"
+              />
+              <feFlood
+                floodColor="rgb(255,255,255)"
+                result="glowColor"
+              />
+              <feComposite
+                in="glowColor"
+                in2="blurred"
+                operator="in"
+                result="softGlow_colored"
+              />
+              <feMerge>
+                <feMergeNode
+                  in="softGlow_colored"
+                />
+                <feMergeNode
+                  in="SourceGraphic"
+                />
+              </feMerge>
+            </filter>
+          </Filter>
+        </defs>
+        <g
+          filter="url(#sofGlow)"
+          key="\\\\mi\`BO3:_E"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={522.4}
+            x2={1008}
+            y1={83.80000000000001}
+            y2={109.71428571428571}
+          />
+          <circle
+            cx={522.4}
+            cy={83.80000000000001}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+        <g
+          filter="url(#sofGlow)"
+          key="Z]QJ+5d%\\";"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={502.4}
+            x2={48}
+            y1={87.80000000000001}
+            y2={109.71428571428571}
+          />
+          <circle
+            cx={502.4}
+            cy={87.80000000000001}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+        <g
+          filter="url(#sofGlow)"
+          key="6l,$[DESBZ"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={470.4}
+            x2={52}
+            y1={94.80000000000001}
+            y2={219.42857142857142}
+          />
+          <circle
+            cx={470.4}
+            cy={94.80000000000001}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+        <g
+          filter="url(#sofGlow)"
+          key="y6>/!I1SrL"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={519.4}
+            x2={1000}
+            y1={101.80000000000001}
+            y2={219.42857142857142}
+          />
+          <circle
+            cx={519.4}
+            cy={101.80000000000001}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+        <g
+          filter="url(#sofGlow)"
+          key="b.73UU?vA5"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={210.4}
+            x2={88}
+            y1={305.8}
+            y2={329.1428571428571}
+          />
+          <circle
+            cx={210.4}
+            cy={305.8}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+        <g
+          filter="url(#sofGlow)"
+          key="ZpXo!G-%VJ"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={569.4}
+            x2={948}
+            y1={352.8}
+            y2={329.1428571428571}
+          />
+          <circle
+            cx={569.4}
+            cy={352.8}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+        <g
+          filter="url(#sofGlow)"
+          key="!r9E.ab79{"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={654.4}
+            x2={964}
+            y1={368.8}
+            y2={438.85714285714283}
+          />
+          <circle
+            cx={654.4}
+            cy={368.8}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+        <g
+          filter="url(#sofGlow)"
+          key="&tL77F\\\\[Ur"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={313.4}
+            x2={56}
+            y1={382.8}
+            y2={438.85714285714283}
+          />
+          <circle
+            cx={313.4}
+            cy={382.8}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+        <g
+          filter="url(#sofGlow)"
+          key="dzlKz+9P\`B"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={146.4}
+            x2={68}
+            y1={478.8}
+            y2={548.5714285714286}
+          />
+          <circle
+            cx={146.4}
+            cy={478.8}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+        <g
+          filter="url(#sofGlow)"
+          key="t~\\";OHw\`($"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={594.4}
+            x2={1016}
+            y1={560.8}
+            y2={548.5714285714286}
+          />
+          <circle
+            cx={594.4}
+            cy={560.8}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+        <g
+          filter="url(#sofGlow)"
+          key="i^7tUZ:3j:"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={747.4}
+            x2={972}
+            y1={665.8}
+            y2={658.2857142857142}
+          />
+          <circle
+            cx={747.4}
+            cy={665.8}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+        <g
+          filter="url(#sofGlow)"
+          key="8>}\\\\_I-F8h"
+        >
+          <line
+            stroke="black"
+            strokeWidth="3"
+            x1={507.4}
+            x2={76}
+            y1={676.8}
+            y2={658.2857142857142}
+          />
+          <circle
+            cx={507.4}
+            cy={676.8}
+            fill="#000"
+            filter="url(#sofGlow)"
+            r={5}
+          />
+        </g>
+      </svg>
+      <div
+        className="label right"
+        key="\\\\mi\`BO3:_E"
+        style={
+          Object {
+            "left": 1008,
+            "top": 109.71428571428571,
+            "width": 1,
+          }
+        }
+      >
+        Sunt
+      </div>
+      <div
+        className="label left"
+        key="Z]QJ+5d%\\";"
+        style={
+          Object {
+            "left": 0,
+            "top": 109.71428571428571,
+            "width": 33,
+          }
+        }
+      >
+        Eu cupidatat
+      </div>
+      <div
+        className="label left"
+        key="6l,$[DESBZ"
+        style={
+          Object {
+            "left": 0,
+            "top": 219.42857142857142,
+            "width": 37,
+          }
+        }
+      >
+        Irure laboris
+      </div>
+      <div
+        className="label right"
+        key="y6>/!I1SrL"
+        style={
+          Object {
+            "left": 1000,
+            "top": 219.42857142857142,
+            "width": 9,
+          }
+        }
+      >
+        Mollit
+      </div>
+      <div
+        className="label left"
+        key="b.73UU?vA5"
+        style={
+          Object {
+            "left": 0,
+            "top": 329.1428571428571,
+            "width": 73,
+          }
+        }
+      >
+        Ea culpa reprehenderit
+      </div>
+      <div
+        className="label right"
+        key="ZpXo!G-%VJ"
+        style={
+          Object {
+            "left": 948,
+            "top": 329.1428571428571,
+            "width": 61,
+          }
+        }
+      >
+        Laboris sit sint ad
+      </div>
+      <div
+        className="label right"
+        key="!r9E.ab79{"
+        style={
+          Object {
+            "left": 964,
+            "top": 438.85714285714283,
+            "width": 45,
+          }
+        }
+      >
+        Aliqua minim ea
+      </div>
+      <div
+        className="label left"
+        key="&tL77F\\\\[Ur"
+        style={
+          Object {
+            "left": 0,
+            "top": 438.85714285714283,
+            "width": 41,
+          }
+        }
+      >
+        Do adipisicing
+      </div>
+      <div
+        className="label left"
+        key="dzlKz+9P\`B"
+        style={
+          Object {
+            "left": 0,
+            "top": 548.5714285714286,
+            "width": 53,
+          }
+        }
+      >
+        Esse exercitation
+      </div>
+      <div
+        className="label right"
+        key="t~\\";OHw\`($"
+        style={
+          Object {
+            "left": 1016,
+            "top": 548.5714285714286,
+            "width": -7,
+          }
+        }
+      >
+        Ex
+      </div>
+      <div
+        className="label right"
+        key="i^7tUZ:3j:"
+        style={
+          Object {
+            "left": 972,
+            "top": 658.2857142857142,
+            "width": 37,
+          }
+        }
+      >
+        Anim pariatur
+      </div>
+      <div
+        className="label left"
+        key="8>}\\\\_I-F8h"
+        style={
+          Object {
+            "left": 0,
+            "top": 658.2857142857142,
+            "width": 61,
+          }
+        }
+      >
+        Ipsum veniam ea qui
+      </div>
+    </div>
+  </Chart>
+</SeedPage>
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Crossing interest point 1`] = `
+<svg
+  height={720}
+  width={1024}
+>
+  <g
+    filter="url(#sofGlow)"
+    key="test"
+  >
+    <line
+      stroke="red"
+      strokeWidth="3"
+      x1={40}
+      x2={10}
+      y1={70}
+      y2={20}
+    />
+    <circle
+      cx={40}
+      cy={70}
+      fill="#000"
+      filter="url(#sofGlow)"
+      r={5}
+    />
+  </g>
+</svg>
+`;

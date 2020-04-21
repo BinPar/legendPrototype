@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: utils/getLabelSize.ts</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -51,8 +53,8 @@
             <div class="column is-9-desktop">
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
-                        <p>Title</p>
-                        <h1>Home</h1>
+                        <p>Source</p>
+                        <h1>utils/getLabelSize.ts</h1>
                     </header>
                     
                     
@@ -60,38 +62,49 @@
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h1>EVA Anatomía Legend Prototype <a href="https://travis-ci.org/BinPar/legendPrototype"><img src="https://travis-ci.org/BinPar/legendPrototype.svg?branch=develop" alt="Build Status"></a> <a href="https://coveralls.io/github/BinPar/legendPrototype?branch=develop"><img src="https://coveralls.io/repos/github/BinPar/legendPrototype/badge.svg?branch=develop" alt="Coverage Status"></a></h1>
-<p>Prototype for the computation of legend lines positions for Eva Anatomía</p>
-<h2>Usage</h2>
-<ul>
-<li>Clone de repository</li>
-<li>Use <code>npm i</code> to install all modules</li>
-<li>Use <code>npm run dev</code> to execute</li>
-</ul>
-<p>After that, opening http://localhost:3000 will redirect to a random page with an unique seed based URL that will present a random legend.</p>
-<p>Clicking on the canvas will navigate to a different location.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>import createVirtualLabel from './createVirtualLabel';
+import { averageCharWidth } from '../settings';
+import isJest from './isJest';
+
+let virtualLabel: HTMLDivElement = createVirtualLabel();
+
+/**
+ * Calculates the size of pixels os a label for a given label text
+ * @param {string} labelText Text contained in the label
+ * @returns {number} The number of pixels of the width of the text
+ */
+const getLabelSize = (labelText: string): number => {
+  if (!virtualLabel || isJest()) {
+    // If we are in SSR or in Jest (because enzyme do not simulate real DOM)
+    // we need to do an aproximate calculation
+    return labelText.length * averageCharWidth;
+  }
+  virtualLabel.innerText = labelText;
+  return virtualLabel.clientWidth;
+};
+
+/**
+ * Allows you to update the virtual label
+ * @param {HTMLDivElement} newVirtualLabel virtual label to set
+ */
+export const setVirtualLabel = (newVirtualLabel: HTMLDivElement): void => {
+  virtualLabel = newVirtualLabel;
+};
+
+/**
+ * Allows you to get the current virtual label
+ * @returns {HTMLDivElement} current virtual label
+ */
+export const getVirtualLabel = (): HTMLDivElement => {
+  return virtualLabel;
+};
+
+export default getLabelSize;
+</code></pre>
+        </article>
     </section>
-
-
 
 
 

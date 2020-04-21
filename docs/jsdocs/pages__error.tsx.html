@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: pages/_error.tsx</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -51,8 +53,8 @@
             <div class="column is-9-desktop">
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
-                        <p>Title</p>
-                        <h1>Home</h1>
+                        <p>Source</p>
+                        <h1>pages/_error.tsx</h1>
                     </header>
                     
                     
@@ -60,38 +62,79 @@
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h1>EVA Anatomía Legend Prototype <a href="https://travis-ci.org/BinPar/legendPrototype"><img src="https://travis-ci.org/BinPar/legendPrototype.svg?branch=develop" alt="Build Status"></a> <a href="https://coveralls.io/github/BinPar/legendPrototype?branch=develop"><img src="https://coveralls.io/repos/github/BinPar/legendPrototype/badge.svg?branch=develop" alt="Coverage Status"></a></h1>
-<p>Prototype for the computation of legend lines positions for Eva Anatomía</p>
-<h2>Usage</h2>
-<ul>
-<li>Clone de repository</li>
-<li>Use <code>npm i</code> to install all modules</li>
-<li>Use <code>npm run dev</code> to execute</li>
-</ul>
-<p>After that, opening http://localhost:3000 will redirect to a random page with an unique seed based URL that will present a random legend.</p>
-<p>Clicking on the canvas will navigate to a different location.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import Head from 'next/head';
+
+/**
+ * Interface of properties received by the 
+ * error page
+ */
+interface ErrorProps {
+  /**
+   * Error code
+   */
+  statusCode?: number;
+}
+
+/**
+ * We typically use NextPageContext imported for next
+ * as the type of the input parameter for getInitialProps
+ * but in this case we just need this small subset
+ * that is easier for mocking requests
+ */
+interface SimplifiedNextPageContext {
+  /**
+   * Response info
+   */
+  res?: ErrorProps;
+  /**
+   * Error info
+   */
+  err?: ErrorProps;
+}
+
+/**
+ * Custom error page
+ * @param {ErrorProps} Props properties of the page
+ * @returns {JSX.Element} Error page
+ */
+const Error = ({ statusCode }: ErrorProps): JSX.Element => {
+  return (
+    &lt;React.Fragment>
+      &lt;Head>
+        &lt;title>Page not found&lt;/title>
+        &lt;link rel="stylesheet" type="text/css" href="/styles.css" />
+      &lt;/Head>
+      &lt;h1>
+        {statusCode
+          ? `An error ${statusCode} occurred on server`
+          : 'An error occurred on client'}
+      &lt;/h1>
+    &lt;/React.Fragment>
+  );
+};
+
+/**
+ * Gets the errors from the request properties
+ * @param {SimplifiedNextPageContext} PageContext Request properties
+ * @returns {ErrorProps} request error code
+ */
+Error.getInitialProps = ({ res, err }: SimplifiedNextPageContext): ErrorProps => {
+  if (res &amp;&amp; res.statusCode) {
+    return { statusCode: res.statusCode };
+  }
+  if (err &amp;&amp; err.statusCode) {
+    return { statusCode: err.statusCode };
+  }
+  return { statusCode: 404 };
+};
+
+export default Error;
+</code></pre>
+        </article>
     </section>
-
-
 
 
 

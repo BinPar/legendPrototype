@@ -50,7 +50,7 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
    * will be drastically reduced if we short the points by
    * their target Y axis
    */
-  interestPoints = interestPoints.sort((a, b) => a.cy - b.cy);
+  interestPoints.sort((a, b) => a.cy - b.cy);
 
   /**
    * Calculates the labelWith for every label based
@@ -111,6 +111,9 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
       label.labelPosition === 'left'
         ? label.labelWidth
         : size.width - label.labelWidth,
+    // We increase the counter int left and right and set the y coordinate
+    // to the separation * the accumulated number of labels in this position
+    // until this point
     ty: ++currentLabels[label.labelPosition] * separation[label.labelPosition],
   }));
 

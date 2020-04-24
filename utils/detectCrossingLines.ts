@@ -42,17 +42,17 @@ export const haveCrossingLines = (legend: LabelInfo[]): boolean => {
      * We can skip the previous checks starting the iterator
      * with i+1 to avoid duplicate checks
      */
-    for (let j = i; j < legend.length; j++) {
+    for (let j = i + 1; j < legend.length; j++) {
       const secondLine = legend[j];
-      if (firstLine.labelPosition === secondLine.labelPosition) {
-        if (isCrossing(firstLine, secondLine)) {
-          /**
-           * We only need to find one pair of crossing legends to asume
-           * that there are crossing lines
-           */
-
-          return true;
-        }
+      if (
+        firstLine.labelPosition === secondLine.labelPosition &&
+        isCrossing(firstLine, secondLine)
+      ) {
+        /**
+         * We only need to find one pair of crossing legends to asume
+         * that there are crossing lines
+         */
+        return true;
       }
     }
   }

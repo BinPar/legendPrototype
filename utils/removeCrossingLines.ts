@@ -69,15 +69,16 @@ const swapCrossingLines = (
      */
     for (let j = i + 1; j < result.length; j++) {
       const secondLine = result[j];
-      if (firstLine.labelPosition === secondLine.labelPosition) {
-        if (isCrossing(firstLine, secondLine)) {
-          // If they are crossing we need to swap them
-          swapLegends(firstLine, secondLine, iteration);
-          // We swap them in the result array too
-          result.splice(j, 1, firstLine);
-          result.splice(i, 1, secondLine);
-          firstLine = secondLine;
-        }
+      if (
+        firstLine.labelPosition === secondLine.labelPosition &&
+        isCrossing(firstLine, secondLine)
+      ) {
+        // If they are crossing we need to swap them
+        swapLegends(firstLine, secondLine, iteration);
+        // We swap them in the result array too
+        result.splice(j, 1, firstLine);
+        result.splice(i, 1, secondLine);
+        firstLine = secondLine;
       }
     }
   }

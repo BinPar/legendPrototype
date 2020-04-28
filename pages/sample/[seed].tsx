@@ -18,7 +18,7 @@ const SeedPage = (): JSX.Element => {
   return (
     <React.Fragment>
       <Head>
-        <title>{`Legend Prototype Seed: ${router.query.seed}`}</title>
+        <title>{`Legend Prototype For Seed: ${router.query.seed}`}</title>
         <link rel="stylesheet" type="text/css" href="/styles.css" />
       </Head>
       <Chart seed={router.query.seed.toString()} />

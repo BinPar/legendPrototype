@@ -1,4 +1,4 @@
-import {intersects} from '../../../utils/isCrossing';
+import intersects from '../../../utils/intersects';
 
 /**
  * Generic test to check segment pair intersections

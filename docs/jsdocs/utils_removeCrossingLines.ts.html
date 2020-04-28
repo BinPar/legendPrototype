@@ -46,7 +46,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Interfaces</h3><ul><li><a href="ChartProps.html">ChartProps</a></li><li><a href="ErrorProps.html">ErrorProps</a></li><li><a href="LabelInfo.html">LabelInfo</a></li><li><a href="SimplifiedNextPageContext.html">SimplifiedNextPageContext</a></li><li><a href="Size.html">Size</a></li></ul><h3>Global</h3><ul><li><a href="global.html#averageCharWidth">averageCharWidth</a></li><li><a href="global.html#Chart">Chart</a></li><li><a href="global.html#createVirtualLabel">createVirtualLabel</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Filter">Filter</a></li><li><a href="global.html#generateRandomLegends">generateRandomLegends</a></li><li><a href="global.html#getLabelSize">getLabelSize</a></li><li><a href="global.html#getVirtualLabel">getVirtualLabel</a></li><li><a href="global.html#haveCrossingLines">haveCrossingLines</a></li><li><a href="global.html#InterestPoint">InterestPoint</a></li><li><a href="global.html#intersects">intersects</a></li><li><a href="global.html#isClient">isClient</a></li><li><a href="global.html#isCrossing">isCrossing</a></li><li><a href="global.html#isJest">isJest</a></li><li><a href="global.html#marcCrossingLines">marcCrossingLines</a></li><li><a href="global.html#margin">margin</a></li><li><a href="global.html#maxIterations">maxIterations</a></li><li><a href="global.html#maxPoints">maxPoints</a></li><li><a href="global.html#minPoints">minPoints</a></li><li><a href="global.html#mockNextUseRouter">mockNextUseRouter</a></li><li><a href="global.html#removeCrossingLines">removeCrossingLines</a></li><li><a href="global.html#securityMargin">securityMargin</a></li><li><a href="global.html#SeedPage">SeedPage</a></li><li><a href="global.html#setForceDisableJestDetection">setForceDisableJestDetection</a></li><li><a href="global.html#setForceServerSimulation">setForceServerSimulation</a></li><li><a href="global.html#setVirtualLabel">setVirtualLabel</a></li><li><a href="global.html#swapCrossingLines">swapCrossingLines</a></li><li><a href="global.html#swapLegends">swapLegends</a></li><li><a href="global.html#useWindowSize">useWindowSize</a></li></ul></div>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Interfaces</h3><ul><li><a href="ChartProps.html">ChartProps</a></li><li><a href="ErrorProps.html">ErrorProps</a></li><li><a href="LabelInfo.html">LabelInfo</a></li><li><a href="Point.html">Point</a></li><li><a href="SimplifiedNextPageContext.html">SimplifiedNextPageContext</a></li><li><a href="Size.html">Size</a></li></ul><h3>Global</h3><ul><li><a href="global.html#averageCharWidth">averageCharWidth</a></li><li><a href="global.html#Chart">Chart</a></li><li><a href="global.html#createVirtualLabel">createVirtualLabel</a></li><li><a href="global.html#elbowCombinationsInPreferenceOrder">elbowCombinationsInPreferenceOrder</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Filter">Filter</a></li><li><a href="global.html#generateRandomLegends">generateRandomLegends</a></li><li><a href="global.html#getLabelSize">getLabelSize</a></li><li><a href="global.html#getLabelXCorrection">getLabelXCorrection</a></li><li><a href="global.html#getVertexFromLabelInfo">getVertexFromLabelInfo</a></li><li><a href="global.html#getVirtualLabel">getVirtualLabel</a></li><li><a href="global.html#haveCrossingLines">haveCrossingLines</a></li><li><a href="global.html#InterestPoint">InterestPoint</a></li><li><a href="global.html#intersects">intersects</a></li><li><a href="global.html#isClient">isClient</a></li><li><a href="global.html#isCrossing">isCrossing</a></li><li><a href="global.html#isCrossingUsingMode">isCrossingUsingMode</a></li><li><a href="global.html#isJest">isJest</a></li><li><a href="global.html#marcCrossingLines">marcCrossingLines</a></li><li><a href="global.html#margin">margin</a></li><li><a href="global.html#maxIterations">maxIterations</a></li><li><a href="global.html#maxPoints">maxPoints</a></li><li><a href="global.html#minPoints">minPoints</a></li><li><a href="global.html#mockNextUseRouter">mockNextUseRouter</a></li><li><a href="global.html#removeCrossingLines">removeCrossingLines</a></li><li><a href="global.html#SeedPage">SeedPage</a></li><li><a href="global.html#setForceDisableJestDetection">setForceDisableJestDetection</a></li><li><a href="global.html#setForceServerSimulation">setForceServerSimulation</a></li><li><a href="global.html#setVirtualLabel">setVirtualLabel</a></li><li><a href="global.html#swapCrossingLines">swapCrossingLines</a></li><li><a href="global.html#swapLegends">swapLegends</a></li><li><a href="global.html#useWindowSize">useWindowSize</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -64,66 +64,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { LabelInfo } from '../model/chart';
+            <pre class="prettyprint source linenums"><code>/* eslint-disable no-param-reassign */
+import { LabelInfo } from '../model/chart';
 import isCrossing from './isCrossing';
 import { haveCrossingLines } from './detectCrossingLines';
-import { maxIterations, securityMargin } from '../settings';
+import { maxIterations } from '../settings';
 
 /**
  * Swap the legend vertical position of two legends
+ * Note: This function do not respect the rules of functional programing because
+ * it is altering the entrance params, but it is required for performance optimization
  * @param firstLegend  first legend to swap
  * @param secondLegend second legend to swap
- * @param iteration number of iteration
  */
-const swapLegends = (
-  firstLegend: LabelInfo,
-  secondLegend: LabelInfo,
-  iteration: number,
-): void => {
-  const legends = {
-    a: firstLegend,
-    b: secondLegend,
-  };
+const swapLegends = (firstLegend: LabelInfo, secondLegend: LabelInfo): void => {
   // Typical swap procedure of the ty (the Y coordinate of the label)
   const firstLegendY = firstLegend.ty;
-  legends.a.ty = legends.b.ty;
-  legends.b.ty = firstLegendY;
-
-  if (iteration > 10) {
-    /**
-     * OK, this is complex, some times after iterating 10 times there is no solution
-     * it is caused because event swapping the vertical coordinate of the label
-     * both are crossing.
-     * The only option of this to happen is that the text in one label in much longer
-     * than the other.
-     * This fix increases the minor label size by 10 every time we swap it after the
-     * 10th iteration to solve this mutual crossing escenarios.
-     * Reducing the 10 pixels ratio will reduce the number of iterations but will generate
-     * more space than the required for this operation.
-     */
-    if (legends.a.labelWidth > legends.b.labelWidth) {
-      legends.b.labelWidth += securityMargin;
-      legends.b.tx +=
-        legends.b.labelPosition === 'left' ? securityMargin : -securityMargin;
-    }
-    if (legends.a.labelWidth &lt; legends.b.labelWidth) {
-      legends.a.labelWidth += securityMargin;
-      legends.a.tx +=
-        legends.a.labelPosition === 'left' ? securityMargin : -securityMargin;
-    }
-  }
+  firstLegend.ty = secondLegend.ty;
+  secondLegend.ty = firstLegendY;
 };
 
 /**
  * Iterates all the legends in the legend info to detect if
  * there are pairs of crossing lines swapping them
  * @param {LabelInfo[]} legend Information of the labels to process
- * @param {number} iteration The number of iteration
+ * @param {boolean} allowElbowMode allow the system to use the Elbow mode
  * @returns {LabelInfo[]} information updated with the isCrossed attribute set
  */
 const swapCrossingLines = (
   legend: LabelInfo[],
-  iteration: number,
+  allowElbowMode: boolean,
 ): LabelInfo[] => {
   const result = [...legend];
   // Reset of isCrossed to false;
@@ -137,10 +107,10 @@ const swapCrossingLines = (
       const secondLine = result[j];
       if (
         firstLine.labelPosition === secondLine.labelPosition &amp;&amp;
-        isCrossing(firstLine, secondLine)
+        isCrossing(firstLine, secondLine, allowElbowMode)
       ) {
         // If they are crossing we need to swap them
-        swapLegends(firstLine, secondLine, iteration);
+        swapLegends(firstLine, secondLine);
         // We swap them in the result array too
         result.splice(j, 1, firstLine);
         result.splice(i, 1, secondLine);
@@ -157,13 +127,29 @@ const swapCrossingLines = (
  * @param {LabelInfo[]} legend Information of the labels to process
  * @returns {LabelInfo[]} information updated avoiding crossing lines
  */
-const removeCrossingLines = (legend: LabelInfo[]): LabelInfo[] => {
-  let result = legend.map((label) => ({ ...label, isCrossed: false }));
+const removeCrossingLines = (legends: LabelInfo[]): LabelInfo[] => {
+  let result = legends.map((label) => ({ ...label, isCrossed: false }));
 
   let i = 0;
 
+  /**
+   * Note: This function do not respect the rules of functional programing because
+   * it is altering the entrance params, but it is required for performance optimization
+   */
+  const resetUseElbowMode = (resultToReset: LabelInfo[]): void =>
+    resultToReset.forEach((label): void => {
+      label.useElbowMode = false;
+    });
+
+  resetUseElbowMode(result);
+
   while (i++ &lt; maxIterations &amp;&amp; haveCrossingLines(result)) {
-    result = swapCrossingLines(result, i);
+    if (i &lt; 20) {
+      result = swapCrossingLines(result, i > 100);
+    } else {
+      // resetUseElbowMode(result);
+      result = swapCrossingLines(result, i > 100);
+    }
   }
 
   return result;
@@ -185,7 +171,7 @@ export default removeCrossingLines;
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Fri Apr 24 2020 09:51:38 GMT+0200 (GMT+02:00)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Tue Apr 28 2020 11:16:52 GMT+0200 (GMT+02:00)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>

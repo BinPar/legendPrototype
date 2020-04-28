@@ -25,16 +25,11 @@ export const margin = 0.1;
  * Average width per character in pixels used to mock 
  * in test escenarios the with calculation of the labels
  */
-export const averageCharWidth = 4;
+export const averageCharWidth = 12;
 
 
 /**
  * Maximum number of iterations to try to optimize
  * one specific chart
  */
-export const maxIterations = 100;
-
-/**
- * Security Margin in pixels between the label reft and right border and the lines
- */
-export const securityMargin = 4;
+export const maxIterations = 200;

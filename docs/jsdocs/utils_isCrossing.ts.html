@@ -46,7 +46,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Interfaces</h3><ul><li><a href="ChartProps.html">ChartProps</a></li><li><a href="ErrorProps.html">ErrorProps</a></li><li><a href="LabelInfo.html">LabelInfo</a></li><li><a href="SimplifiedNextPageContext.html">SimplifiedNextPageContext</a></li><li><a href="Size.html">Size</a></li></ul><h3>Global</h3><ul><li><a href="global.html#averageCharWidth">averageCharWidth</a></li><li><a href="global.html#Chart">Chart</a></li><li><a href="global.html#createVirtualLabel">createVirtualLabel</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Filter">Filter</a></li><li><a href="global.html#generateRandomLegends">generateRandomLegends</a></li><li><a href="global.html#getLabelSize">getLabelSize</a></li><li><a href="global.html#getVirtualLabel">getVirtualLabel</a></li><li><a href="global.html#haveCrossingLines">haveCrossingLines</a></li><li><a href="global.html#InterestPoint">InterestPoint</a></li><li><a href="global.html#intersects">intersects</a></li><li><a href="global.html#isClient">isClient</a></li><li><a href="global.html#isCrossing">isCrossing</a></li><li><a href="global.html#isJest">isJest</a></li><li><a href="global.html#marcCrossingLines">marcCrossingLines</a></li><li><a href="global.html#margin">margin</a></li><li><a href="global.html#maxIterations">maxIterations</a></li><li><a href="global.html#maxPoints">maxPoints</a></li><li><a href="global.html#minPoints">minPoints</a></li><li><a href="global.html#mockNextUseRouter">mockNextUseRouter</a></li><li><a href="global.html#removeCrossingLines">removeCrossingLines</a></li><li><a href="global.html#securityMargin">securityMargin</a></li><li><a href="global.html#SeedPage">SeedPage</a></li><li><a href="global.html#setForceDisableJestDetection">setForceDisableJestDetection</a></li><li><a href="global.html#setForceServerSimulation">setForceServerSimulation</a></li><li><a href="global.html#setVirtualLabel">setVirtualLabel</a></li><li><a href="global.html#swapCrossingLines">swapCrossingLines</a></li><li><a href="global.html#swapLegends">swapLegends</a></li><li><a href="global.html#useWindowSize">useWindowSize</a></li></ul></div>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Interfaces</h3><ul><li><a href="ChartProps.html">ChartProps</a></li><li><a href="ErrorProps.html">ErrorProps</a></li><li><a href="LabelInfo.html">LabelInfo</a></li><li><a href="Point.html">Point</a></li><li><a href="SimplifiedNextPageContext.html">SimplifiedNextPageContext</a></li><li><a href="Size.html">Size</a></li></ul><h3>Global</h3><ul><li><a href="global.html#averageCharWidth">averageCharWidth</a></li><li><a href="global.html#Chart">Chart</a></li><li><a href="global.html#createVirtualLabel">createVirtualLabel</a></li><li><a href="global.html#elbowCombinationsInPreferenceOrder">elbowCombinationsInPreferenceOrder</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Filter">Filter</a></li><li><a href="global.html#generateRandomLegends">generateRandomLegends</a></li><li><a href="global.html#getLabelSize">getLabelSize</a></li><li><a href="global.html#getLabelXCorrection">getLabelXCorrection</a></li><li><a href="global.html#getVertexFromLabelInfo">getVertexFromLabelInfo</a></li><li><a href="global.html#getVirtualLabel">getVirtualLabel</a></li><li><a href="global.html#haveCrossingLines">haveCrossingLines</a></li><li><a href="global.html#InterestPoint">InterestPoint</a></li><li><a href="global.html#intersects">intersects</a></li><li><a href="global.html#isClient">isClient</a></li><li><a href="global.html#isCrossing">isCrossing</a></li><li><a href="global.html#isCrossingUsingMode">isCrossingUsingMode</a></li><li><a href="global.html#isJest">isJest</a></li><li><a href="global.html#marcCrossingLines">marcCrossingLines</a></li><li><a href="global.html#margin">margin</a></li><li><a href="global.html#maxIterations">maxIterations</a></li><li><a href="global.html#maxPoints">maxPoints</a></li><li><a href="global.html#minPoints">minPoints</a></li><li><a href="global.html#mockNextUseRouter">mockNextUseRouter</a></li><li><a href="global.html#removeCrossingLines">removeCrossingLines</a></li><li><a href="global.html#SeedPage">SeedPage</a></li><li><a href="global.html#setForceDisableJestDetection">setForceDisableJestDetection</a></li><li><a href="global.html#setForceServerSimulation">setForceServerSimulation</a></li><li><a href="global.html#setVirtualLabel">setVirtualLabel</a></li><li><a href="global.html#swapCrossingLines">swapCrossingLines</a></li><li><a href="global.html#swapLegends">swapLegends</a></li><li><a href="global.html#useWindowSize">useWindowSize</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -64,129 +64,79 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { LabelInfo } from '../model/chart';
-import { securityMargin } from '../settings';
+            <pre class="prettyprint source linenums"><code>/* eslint-disable no-param-reassign */
+import { LabelInfo } from '../model/chart';
+import isCrossingUsingMode from './isCrossingUsingMode';
 
 /**
- * Detects if the segments (ax1,ay1)-(ax2,ay2) and (bx1,by1)-(bx2,by2)
- * are crossing each other
- * @param {number} ax1 X coordinate of the first point of the first segment
- * @param {number} ay1 Y coordinate of the first point of the first segment
- * @param {number} ax2 X coordinate of the second point of the first segment
- * @param {number} ay2 Y coordinate of the second point of the first segment
- * @param {number} bx1 X coordinate of the first point of the second segment
- * @param {number} by1 Y coordinate of the first point of the second segment
- * @param {number} bx2 X coordinate of the second point of the second segment
- * @param {number} by2 Y coordinate of the second point of the second segment
- * @returns true if both are intersected
+ * The who legends will use distinct modes for their elbow mode configuration
+ * this are de combinations in order of preference for the system
  */
-export const intersects = (
-  ax1: number,
-  ay1: number,
-  ax2: number,
-  ay2: number,
-  bx1: number,
-  by1: number,
-  bx2: number,
-  by2: number,
-): boolean => {
-  /**
-   * [TLTR]: Math required for this, sorry for non science coders!
-   *
-   * Explanation:
-   *
-   * Segments can be described by some initial vector, v, and a direction vector, d:
-   * r = v + lambda * d
-   *
-   * We use one point (ax1,ay1) as the initial vector and the difference between
-   * them (ax2-ax1,ay2-ay1) as the direction vector. Likewise for our second line.
-   *
-   * If our two lines intersect, then there must be a point, X, that is reachable
-   * by travelling some distance, lambda, along our first line and also reachable
-   * by travelling gamma units along our second line.
-   *
-   * This gives us two simultaneous equations for the coordinates of X:
-   *
-   * X = v1 + lambda * d1
-   * X = v2 + gamma * d2
-   *
-   * These equations can be represented in matrix form. We check that the determinant
-   * is non-zero to see if the intersection X even exists.
-   *
-   * If there is an intersection, then we must check that the intersection actually lies
-   * between both sets of points. If lambda is greater than 1, the intersection is beyond
-   * the second point. If lambda is less than 0, the intersection is before the first point.
-   *
-   * Hence, 0&lt;lambda&lt;1 &amp;&amp; 0&lt;gamma&lt;1 indicates that the two lines intersect!
-   */
-
-  const pendentDelta = (ax2 - ax1) * (by2 - by1) - (bx2 - bx1) * (ay2 - ay1);
-
-  if (pendentDelta === 0) {
-    // Parallel segments, they can not cross
-    return false;
-  }
-
-  const lambda =
-    ((by2 - by1) * (bx2 - ax1) + (bx1 - bx2) * (by2 - ay1)) / pendentDelta;
-  const gamma =
-    ((ay1 - ay2) * (bx2 - ax1) + (ax2 - ax1) * (by2 - ay1)) / pendentDelta;
-
-  return lambda > 0 &amp;&amp; lambda &lt; 1 &amp;&amp; gamma > 0 &amp;&amp; gamma &lt; 1;
-};
+const elbowCombinationsInPreferenceOrder = [
+  // When both lines are not in elbow mode
+  [
+    { a: false, b: false },
+    { a: true, b: false },
+    { a: false, b: true },
+    { a: true, b: true },
+  ],
+  // When first line in in elbow mode
+  [
+    { a: true, b: false },
+    { a: true, b: true },
+  ],
+  // When second line in in elbow mode
+  [
+    { a: false, b: true },
+    { a: true, b: true },
+  ],
+  // When both are in elbow mode
+  [{ a: true, b: true }],
+];
 
 /**
- * Check if two lines are crossed
+ * Check if two lines are crossed in the distinct combinations
+ * If any one  works it returns false and sets the configuration that avoid
+ * the crossing, else it returns true that will imply that
+ * no combination resolves the problem
  * @param {LabelInfo} lineA first line to check
  * @param {LabelInfo} lineB second line to check
+ * @param {boolean} allowElbowMode allow the system to use the Elbow mode
  * @returns {boolean} true if the lines do cross each other
  */
-const isCrossing = (lineA: LabelInfo, lineB: LabelInfo): boolean => {  
-  // Point to label to point to label check
-  if (intersects(
-    lineA.cx,
-    lineA.cy,
-    lineA.tx,
-    lineA.ty,
-    lineB.cx,
-    lineB.cy,
-    lineB.tx,
-    lineB.ty,
-  )) {
-    return true;
+const isCrossing = (
+  lineA: LabelInfo,
+  lineB: LabelInfo,
+  allowElbowMode: boolean,
+): boolean => {
+  // Only straight line used
+  let combinations = [{
+    a: lineA.useElbowMode,
+    b: lineB.useElbowMode,
+  }];
+
+  if (allowElbowMode) {
+    // Distinct lines combinations
+    const combinationIndex =
+      (lineA.useElbowMode ? 1 : 0) + (lineB.useElbowMode ? 2 : 0);
+    combinations = elbowCombinationsInPreferenceOrder[combinationIndex];
   }
 
-  let labelWidth = lineB.labelWidth + securityMargin;
-  // Point to label to label check
-  if (intersects(
-    lineA.cx,
-    lineA.cy,
-    lineA.tx,
-    lineA.ty,
-    lineB.tx + (lineB.labelPosition === 'left' ? securityMargin : -securityMargin),
-    lineB.ty,
-    lineB.tx + (lineB.labelPosition === 'left' ? -labelWidth : labelWidth),
-    lineB.ty,
-  )) {
-    return true;
+  /**
+   * Note: This function do not respect the rules of functional programing because
+   * it is altering the entrance params, but it is required for performance optimization
+   */
+  for (let i = 0; i &lt; combinations.length; i++) {
+    const elbowCombination = combinations[i];
+    lineA.useElbowMode = elbowCombination.a;
+    lineB.useElbowMode = elbowCombination.b;
+    if (!isCrossingUsingMode(lineA, lineB)) {
+      return false;
+    }
   }
-
-  labelWidth = lineA.labelWidth + securityMargin;
-  // Label to point to label check
-  if (intersects(
-    lineA.tx + (lineA.labelPosition === 'left' ? securityMargin : -securityMargin),
-    lineA.ty,
-    lineA.tx + (lineA.labelPosition === 'left' ? -labelWidth: labelWidth),
-    lineA.ty,
-    lineB.cx,
-    lineB.cy,
-    lineB.tx,
-    lineB.ty,    
-  )) {
-    return true;
-  }
-
-  return false;
+  lineA.useElbowMode = combinations[0].a;
+  lineB.useElbowMode = combinations[0].b;
+  return true;
 };
 
 export default isCrossing;
@@ -205,7 +155,7 @@ export default isCrossing;
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Fri Apr 24 2020 09:51:38 GMT+0200 (GMT+02:00)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Tue Apr 28 2020 11:16:52 GMT+0200 (GMT+02:00)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>

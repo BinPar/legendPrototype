@@ -15,9 +15,13 @@ export interface LabelInfo {
   /** Y coordinate of the label start */
   ty: number;
   /** The with of the label in pixels */
-  labelWidth: number;
-  /** The with of the label in pixels before increasing */
-  originalLabelWidth?: number;
+  labelWidth: number;  
+  /**
+   * Property that will force the ElbowMode of the line drawing that will use an 
+   * L shape to connect the label with the point instad of a direct line.
+   * This shape will fix some problems in the drawing
+   */
+  useElbowMode: boolean;
   /** Label position (right or left) */
   labelPosition: 'right' | 'left';
   /** True when the line is crossed by another line */

@@ -18,6 +18,7 @@ test('Crossing interest point', () => {
     labelWidth: 20,
     labelPosition: 'left',
     isCrossed: true,
+    useElbowMode: false,
     cx: 40,
     cy: 70,
     tx: 10,
@@ -34,5 +35,17 @@ test('Crossing interest point', () => {
   );
 
   // Verify that the Virtual DOM is not changed
-  expect(result).toMatchSnapshot();
+  expect(result).toMatchSnapshot('crossedInterestPoint');
+
+  props.useElbowMode = true;
+
+  // Renders the InterestPoint with ElbowMode
+  const resultElbow = mount(
+    <svg width={1024} height={720}>
+      {lines.map(InterestPoint)}
+    </svg>
+  );
+
+  // Verify that the Virtual DOM is not changed
+  expect(resultElbow).toMatchSnapshot('crossedInterestPointWithElbow');
 });

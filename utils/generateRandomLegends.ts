@@ -24,6 +24,7 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
     labelWidth: 0,
     labelPosition: 'left',
     isCrossed: false,
+    useElbowMode: false,
     cx: 0,
     cy: 0,
     tx: 0,
@@ -65,7 +66,6 @@ const generateRandomLegends = (seed: string, size: Size): LabelInfo[] => {
       const result: LabelInfo = {
         ...label,
         labelWidth,
-        originalLabelWidth: labelWidth,
         labelPosition: label.cx <= size.width / 2 ? 'left' : 'right',
       };
       return result;

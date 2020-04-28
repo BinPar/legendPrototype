@@ -1,5 +1,5 @@
 import { LabelInfo } from '../model/chart';
-import isCrossing from './isCrossing';
+import isCrossingUsingMode from './isCrossingUsingMode';
 
 /**
  * Iterates all the legends in the legend info to detect if
@@ -19,7 +19,7 @@ export const marcCrossingLines = (legend: LabelInfo[]): LabelInfo[] => {
      */
     for (let j = i + 1; j < result.length; j++) {
       const secondLine = result[j];
-      if (isCrossing(firstLine, secondLine)) {
+      if (isCrossingUsingMode(firstLine, secondLine)) {
         // If they are crossing we mark both as crossed
         firstLine.isCrossed = true;
         secondLine.isCrossed = true;
@@ -46,7 +46,7 @@ export const haveCrossingLines = (legend: LabelInfo[]): boolean => {
       const secondLine = legend[j];
       if (
         firstLine.labelPosition === secondLine.labelPosition &&
-        isCrossing(firstLine, secondLine)
+        isCrossingUsingMode(firstLine, secondLine)
       ) {
         /**
          * We only need to find one pair of crossing legends to asume

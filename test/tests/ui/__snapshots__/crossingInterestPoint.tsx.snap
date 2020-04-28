@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Crossing interest point 1`] = `
+exports[`Crossing interest point: crossedInterestPoint 1`] = `
 <svg
   height={720}
   width={1024}
@@ -21,7 +21,41 @@ exports[`Crossing interest point 1`] = `
       cx={40}
       cy={70}
       fill="#000"
-      filter="url(#sofGlow)"
+      r={5}
+    />
+  </g>
+</svg>
+`;
+
+exports[`Crossing interest point: crossedInterestPointWithElbow 1`] = `
+<svg
+  height={720}
+  width={1024}
+>
+  <g
+    filter="url(#sofGlow)"
+    key="test"
+  >
+    <line
+      stroke="red"
+      strokeWidth="3"
+      x1={10}
+      x2={40}
+      y1={20}
+      y2={20}
+    />
+    <line
+      stroke="red"
+      strokeWidth="3"
+      x1={40}
+      x2={40}
+      y1={70}
+      y2={20}
+    />
+    <circle
+      cx={40}
+      cy={70}
+      fill="#000"
       r={5}
     />
   </g>

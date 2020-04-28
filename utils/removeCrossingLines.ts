@@ -1,63 +1,33 @@
+/* eslint-disable no-param-reassign */
 import { LabelInfo } from '../model/chart';
 import isCrossing from './isCrossing';
 import { haveCrossingLines } from './detectCrossingLines';
-import { maxIterations, securityMargin } from '../settings';
+import { maxIterations } from '../settings';
 
 /**
  * Swap the legend vertical position of two legends
+ * Note: This function do not respect the rules of functional programing because
+ * it is altering the entrance params, but it is required for performance optimization
  * @param firstLegend  first legend to swap
  * @param secondLegend second legend to swap
- * @param iteration number of iteration
  */
-const swapLegends = (
-  firstLegend: LabelInfo,
-  secondLegend: LabelInfo,
-  iteration: number,
-): void => {
-  const legends = {
-    a: firstLegend,
-    b: secondLegend,
-  };
+const swapLegends = (firstLegend: LabelInfo, secondLegend: LabelInfo): void => {
   // Typical swap procedure of the ty (the Y coordinate of the label)
   const firstLegendY = firstLegend.ty;
-  legends.a.ty = legends.b.ty;
-  legends.b.ty = firstLegendY;
-
-  if (iteration > 10) {
-    /**
-     * OK, this is complex, some times after iterating 10 times there is no solution
-     * it is caused because event swapping the vertical coordinate of the label
-     * both are crossing.
-     * The only option of this to happen is that the text in one label in much longer
-     * than the other.
-     * This fix increases the minor label size by 10 every time we swap it after the
-     * 10th iteration to solve this mutual crossing escenarios.
-     * Reducing the 10 pixels ratio will reduce the number of iterations but will generate
-     * more space than the required for this operation.
-     */
-    if (legends.a.labelWidth > legends.b.labelWidth) {
-      legends.b.labelWidth += securityMargin;
-      legends.b.tx +=
-        legends.b.labelPosition === 'left' ? securityMargin : -securityMargin;
-    }
-    if (legends.a.labelWidth < legends.b.labelWidth) {
-      legends.a.labelWidth += securityMargin;
-      legends.a.tx +=
-        legends.a.labelPosition === 'left' ? securityMargin : -securityMargin;
-    }
-  }
+  firstLegend.ty = secondLegend.ty;
+  secondLegend.ty = firstLegendY;
 };
 
 /**
  * Iterates all the legends in the legend info to detect if
  * there are pairs of crossing lines swapping them
  * @param {LabelInfo[]} legend Information of the labels to process
- * @param {number} iteration The number of iteration
+ * @param {boolean} allowElbowMode allow the system to use the Elbow mode
  * @returns {LabelInfo[]} information updated with the isCrossed attribute set
  */
 const swapCrossingLines = (
   legend: LabelInfo[],
-  iteration: number,
+  allowElbowMode: boolean,
 ): LabelInfo[] => {
   const result = [...legend];
   // Reset of isCrossed to false;
@@ -71,10 +41,10 @@ const swapCrossingLines = (
       const secondLine = result[j];
       if (
         firstLine.labelPosition === secondLine.labelPosition &&
-        isCrossing(firstLine, secondLine)
+        isCrossing(firstLine, secondLine, allowElbowMode)
       ) {
         // If they are crossing we need to swap them
-        swapLegends(firstLine, secondLine, iteration);
+        swapLegends(firstLine, secondLine);
         // We swap them in the result array too
         result.splice(j, 1, firstLine);
         result.splice(i, 1, secondLine);
@@ -91,13 +61,29 @@ const swapCrossingLines = (
  * @param {LabelInfo[]} legend Information of the labels to process
  * @returns {LabelInfo[]} information updated avoiding crossing lines
  */
-const removeCrossingLines = (legend: LabelInfo[]): LabelInfo[] => {
-  let result = legend.map((label) => ({ ...label, isCrossed: false }));
+const removeCrossingLines = (legends: LabelInfo[]): LabelInfo[] => {
+  let result = legends.map((label) => ({ ...label, isCrossed: false }));
 
   let i = 0;
 
+  /**
+   * Note: This function do not respect the rules of functional programing because
+   * it is altering the entrance params, but it is required for performance optimization
+   */
+  const resetUseElbowMode = (resultToReset: LabelInfo[]): void =>
+    resultToReset.forEach((label): void => {
+      label.useElbowMode = false;
+    });
+
+  resetUseElbowMode(result);
+
   while (i++ < maxIterations && haveCrossingLines(result)) {
-    result = swapCrossingLines(result, i);
+    if (i < 20) {
+      result = swapCrossingLines(result, i > 100);
+    } else {
+      // resetUseElbowMode(result);
+      result = swapCrossingLines(result, i > 100);
+    }
   }
 
   return result;

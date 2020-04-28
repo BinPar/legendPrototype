@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: legend-prototype
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: legend-prototype
+  template:
+    metadata:
+      labels:
+        app: legend-prototype
+    spec:
+      containers:
+        - name: app
+          image: legendprototype:latest
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always

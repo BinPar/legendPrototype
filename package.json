@@ -11,7 +11,7 @@
     "docker-build": "npm run build;rm -rf .next;next build;docker build --rm --pull -f \"./Dockerfile\" -t \"legendprototype:latest\" \".\"",
     "docker-build-develop": "docker build --rm --pull -f \"./develop.Dockerfile\" -t \"legendprototype-develop:latest\" \".\"",
     "docker-start": "echo \"Starting docker container and attaching it to: http://localhost:4000/\";docker run -p 4000:80 legendprototype:latest",
-    "docker-start-develop": "echo \"Starting docker container and attaching it to: http://localhost:4001/\";docker run -p 4001:3000 -v $INIT_CWD:/usr/src/app legendprototype-develop:latest",
+    "docker-start-develop": "echo \"Starting docker container and attaching it to: http://localhost:4001/\";docker run -it -p 4001:3000 -v $INIT_CWD:/usr/src/app legendprototype-develop:latest",
     "start": "next start -p 80",
     "lint": "eslint \"**/*.{ts,tsx}\" --ignore-pattern node_modules/",
     "test": "jest",
